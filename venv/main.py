@@ -8,7 +8,7 @@ import time
 import os
 from OpenSSL import SSL, crypto
 import eventlet
-eventlet.monkey_patch(socket=False)
+
 
 
 # SETUP
