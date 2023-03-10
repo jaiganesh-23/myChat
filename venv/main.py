@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 from application import create_app
 from application.user_database import user_Db
 from application.message_database import message_Db
+from waitress import serve
 import time
 
 
@@ -29,7 +30,8 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True, host='0.0.0.0', allow_unsafe_werkzeug=True)
+    #socketio.run(app, debug=True, host='0.0.0.0', allow_unsafe_werkzeug=True)
+    serve(app, host='127.0.0.1', port=8080)
 
 
 
