@@ -111,7 +111,7 @@ async function load_chat(chat_room){
 
 add_chat_rooms();
 
-var socket = io.connect("http://"+document.domain+ ":" +location.port);
+var socket = io.connect(document.domain+ ":" +location.port);
 socket.on("connect", async function() {
     var usr_name = await load_name();
     var room_name = document.getElementById("chat-room-header").textContent;
