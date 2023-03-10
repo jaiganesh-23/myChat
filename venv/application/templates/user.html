@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{session['name']}} Home{% endblock %}
+{% block css %}<link rel="stylesheet" href={{url_for('static', filename="user_styles.css")}}>{% endblock %}
+{% block content %}
+<div id="messages-container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="flash-msg">{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+<div class="main-container">
+    <div id="rooms-container">
+    </div>
+    <div class="chat-container">
+        <h2 id="chat-room-header">Chat Box</h2>
+        <div class="overflow-auto msgs" id="messages"></div>
+        <div class="message-input">
+            <input type="text" name="msg" id="msg" placeholder="Enter your message to send...">
+            <button type="submit" class="btn btn-primary" name="send" id="send">Send</button>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js" integrity="sha512-HTENHrkQ/P0NGDFd5nk6ibVtCkcM7jhr2c7GyvXp5O+4X6O5cQO9AhqFzM+MdeBivsX7Hoys2J7pp2wdgMpCvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../static/user.js"></script>
+{% endblock %}

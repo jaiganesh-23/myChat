@@ -1,0 +1,129 @@
+body{
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+.main-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#rooms-container{
+    width: 30%;
+    margin-left: 1%;
+    background-color: #fafafa;
+    border-radius: 2rem;
+    margin-top: 30px;
+}
+
+#rooms-container hr{
+    margin: 0;
+}
+
+.chat-container{
+    width: 65%;
+    margin-left: 2%;
+    background-color: #fafafa;
+    height: 500px;
+    border-radius: 2rem;
+    margin-top: 30px;
+}
+
+.chat-container>h2{
+    background-color: #efefef;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+#messages{
+    height: 70%;
+    position: relative;
+}
+
+.message-input{
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 50px;
+}
+
+.message-input>input{
+    width: 80%;
+}
+
+.message-input>button{
+    width: 10%;
+}
+
+.chat-room{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #efefef;
+    text-align: center;
+    height: 75px;
+    align-items: center;
+    /* align-content: center; */
+    border-radius: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-room i{
+    font-size: 80px;
+}
+
+#chat-room-header{
+    margin: auto;
+}
+
+.chat-room:hover{
+    cursor: pointer;
+    transition: scale(1.5);
+}
+
+.chat-room>img{
+    height: 100%;
+}
+
+.chat-room>h4{
+    margin-left: 5%;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.message>p{
+    background-color: #efefef;
+    font-size: 1rem;
+    margin: 0;
+    width: fit-content;
+    padding: 10px 10px;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    border-radius: 1rem;
+}
+
+.right{
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.message>p>span:hover{
+    cursor: pointer;
+}
+
+#messages-container{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: auto;
+}
+
+.add_friend{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}

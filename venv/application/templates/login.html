@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block title %}Login{% endblock %}
+{% block css %}<link rel="stylesheet" href={{url_for('static', filename="login.css")}}>{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div id="messages-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class="flash-msg">{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form class="login-form" action="#" method="POST">
+        <div class="mb-3">
+             <label for="userName" class="form-label">Username:</label>
+             <input type="text" id="userName" name="userName" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" placeholder="**********" class="form-control">
+        </div>
+        <div class="button-accessories">
+            <a href="/forgot_password" id="forgot-password">Forgot Password?</a>
+            <button type="submit" class="btn btn-success login-button">Login</button>
+        </div>
+        <a href="/home" id="registered">Not registered?, Click here to Register</a>
+    </form>
+</div>
+
+{% endblock %}

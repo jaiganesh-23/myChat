@@ -1,0 +1,62 @@
+
+body{
+   background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+.icon{
+    color: #f8b707;
+    font-size: 30px;
+}
+
+#messages-container{
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #b88806;
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+}
+
+.login-form {
+    z-index: 1;
+    padding: 3rem;
+    margin: auto;
+    margin-top: 3rem;
+    width: 50%;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 1em 1em 0 rgb(0 0 0 / 24%);
+}
+
+#registered{
+    margin-top: 3rem;
+    display: block;
+}
+
+.button-accessories{
+    display: flex;
+    flex-direction: row;
+}
+
+.button-accessories>a{
+    font-size: 100%;
+    width: 20%;
+}
+
+.login-button{
+    font-size: 100%;
+    width: 30%;
+    margin-left: 15%;
+}
+
+@media only screen and (max-width: 770px){
+    .button-accessories>a{
+        font-size:50%
+    }
+    .login-button{
+        font-size: 50%;
+    }
+}
