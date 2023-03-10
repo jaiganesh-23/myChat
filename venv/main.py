@@ -71,7 +71,7 @@ if __name__ == "__main__":
                              "City": "Ithaca",
                              "Organization": "Python-Bugs",
                              "Org. Unit": "Proof of Concept"})
-    os.system("python nginx.py")
+    #os.system("python nginx.py")
     socketio.run(app, debug=True, host='127.0.0.1', certfile=CERT_FILE, keyfile=KEY_FILE, port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
