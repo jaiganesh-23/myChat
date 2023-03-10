@@ -113,6 +113,7 @@ add_chat_rooms();
 
 var socket = io.connect("https://"+document.domain+ ":" +location.port);
 socket.on("connect", async function() {
+    //setTimeout(function(){}, 5000);
     var usr_name = await load_name();
     var room_name = document.getElementById("chat-room-header").textContent;
     console.log(usr_name);
@@ -120,6 +121,12 @@ socket.on("connect", async function() {
         socket.emit("receive_message", {
             content: usr_name + " just connected to the server!",
             chat_room: room_name, 
+            sender: usr_name,
+            connect: true,
+        });
+        socket.emit("receive_message", {
+            content: "<----- Welcome to the server " + usr_name + " ----->",
+            chat_room: room_name,
             sender: usr_name,
             connect: true,
         });

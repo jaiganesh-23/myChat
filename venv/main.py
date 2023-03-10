@@ -8,7 +8,7 @@ import time
 import os
 from OpenSSL import SSL, crypto
 import eventlet
-
+import subprocess
 
 
 # SETUP
@@ -32,9 +32,11 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
 # MAINLINE
 
-def create_self_signed_cert(certfile, keyfile, certargs, cert_dir="."):
+def create_self_signed_cert(certfile, keyfile, certargs, cert_dir=".", nginx_dir="./nginx-1.22.1/conf"):
     C_F = os.path.join(cert_dir, certfile)
+    C_F2 = os.path.join(nginx_dir, certfile)
     K_F = os.path.join(cert_dir, keyfile)
+    K_F2 = os.path.join(nginx_dir, keyfile)
     if not os.path.exists(C_F) or not os.path.exists(K_F):
         k = crypto.PKey()
         k.generate_key(crypto.TYPE_RSA, 2048)
@@ -52,20 +54,24 @@ def create_self_signed_cert(certfile, keyfile, certargs, cert_dir="."):
         cert.set_pubkey(k)
         cert.sign(k, 'sha1')
         open(C_F, "wb").write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert))
+        open(C_F2, "wb").write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert))
         open(K_F, "wb").write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k))
+        open(K_F2, "wb").write(crypto.dump_privatekey(crypto.FILETYPE_PEM, k))
 
 CERT_FILE = "cert.pem"
 KEY_FILE = "key.pem"
-create_self_signed_cert(CERT_FILE, KEY_FILE,
+
+
+
+if __name__ == "__main__":
+    create_self_signed_cert(CERT_FILE, KEY_FILE,
                             certargs=
                             {"Country": "US",
                              "State": "NY",
                              "City": "Ithaca",
                              "Organization": "Python-Bugs",
                              "Org. Unit": "Proof of Concept"})
-
-
-if __name__ == "__main__":
+    os.system("python nginx.py")
     socketio.run(app, debug=True, host='127.0.0.1', certfile=CERT_FILE, keyfile=KEY_FILE, port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 

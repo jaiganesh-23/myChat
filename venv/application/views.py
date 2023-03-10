@@ -11,7 +11,6 @@ MSG_LIMIT = 30
 
 # VIEWS
 
-
 @view.route("/", methods=["GET", "POST"])
 @view.route("/home/", methods=["GET", "POST"])
 @view.route("/home/<user>", methods=["GET", "POST"])
