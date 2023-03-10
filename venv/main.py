@@ -67,7 +67,7 @@ create_self_signed_cert(CERT_FILE, KEY_FILE,
 
 if __name__ == "__main__":
     socketio.run(app, debug=True, host='127.0.0.1', certfile=CERT_FILE, keyfile=KEY_FILE, port=5000)
-    #serve(app, host='127.0.0.1', port=8080)
+    #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
 
 
