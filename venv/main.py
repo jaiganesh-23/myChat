@@ -66,11 +66,11 @@ KEY_FILE = "key.pem"
 if __name__ == "__main__":
     create_self_signed_cert(CERT_FILE, KEY_FILE,
                             certargs=
-                            {"Country": "US",
-                             "State": "NY",
-                             "City": "Ithaca",
-                             "Organization": "Python-Bugs",
-                             "Org. Unit": "Proof of Concept"})
+                            {"Country": "AA",
+                             "State": "AA",
+                             "City": "ABCD",
+                             "Organization": "ABCD",
+                             "Org. Unit": "ABCD"})
     nginx_result = os.system("start ./nginx.exe")
     socketio.run(app, debug=True, host='127.0.0.1', keyfile=KEY_FILE, certfile=CERT_FILE, port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
