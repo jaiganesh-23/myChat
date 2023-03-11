@@ -217,3 +217,41 @@
 2023/03/10 21:57:16 [error] 19204#13076: CreateFile() "C:\Users\jaiga\Desktop\New folder\venv\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
 2023/03/10 21:57:19 [notice] 2064#2224: signal process started
 2023/03/10 21:57:19 [error] 2064#2224: CreateFile() "C:\Users\jaiga\Desktop\New folder\venv\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2023/03/11 11:06:45 [warn] 10368#1176: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:06:45 [warn] 10368#1176: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:06:45 [emerg] 10368#1176: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/11 11:07:16 [warn] 19912#9660: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:07:16 [warn] 19912#9660: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:07:16 [emerg] 19912#9660: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/11 11:08:30 [warn] 18284#11092: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:08:30 [warn] 18284#11092: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:08:30 [warn] 15716#4792: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:08:30 [warn] 15716#4792: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:08:53 [warn] 20220#15864: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:08:53 [warn] 20220#15864: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:08:53 [notice] 20220#15864: signal process started
+2023/03/11 11:09:57 [warn] 6188#4752: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:09:57 [warn] 6188#4752: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:09:57 [warn] 17424#14056: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:09:57 [warn] 17424#14056: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:10:01 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:01 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:02 [error] 17424#16640: *1 CreateFile() "C:\Users\jaiga\Desktop\New folder\venv/html/favicon.ico" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2023/03/11 11:10:03 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:04 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:05 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:06 [error] 17424#16640: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:10:23 [warn] 9028#20188: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:10:23 [warn] 9028#20188: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:10:23 [notice] 9028#20188: signal process started
+2023/03/11 11:10:26 [error] 17424#16640: *2 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:12:38 [warn] 4076#20396: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:12:38 [warn] 4076#20396: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:12:38 [warn] 22268#1324: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:12:38 [warn] 22268#1324: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:12:40 [warn] 19376#18904: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:12:40 [warn] 19376#18904: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:12:40 [warn] 5992#20732: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:127
+2023/03/11 11:12:40 [warn] 5992#20732: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
+2023/03/11 11:12:46 [error] 22268#21832: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/11 11:12:46 [error] 22268#21832: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"

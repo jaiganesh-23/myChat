@@ -32,7 +32,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
 # MAINLINE
 
-def create_self_signed_cert(certfile, keyfile, certargs, cert_dir=".", nginx_dir="./nginx-1.22.1/conf"):
+def create_self_signed_cert(certfile, keyfile, certargs, cert_dir=".", nginx_dir="./conf"):
     C_F = os.path.join(cert_dir, certfile)
     C_F2 = os.path.join(nginx_dir, certfile)
     K_F = os.path.join(cert_dir, keyfile)
@@ -71,7 +71,7 @@ if __name__ == "__main__":
                              "City": "Ithaca",
                              "Organization": "Python-Bugs",
                              "Org. Unit": "Proof of Concept"})
-    #os.system("python nginx.py")
+    nginx_result = os.system("start ./nginx.exe")
     socketio.run(app, debug=True, host='127.0.0.1', keyfile=KEY_FILE, certfile=CERT_FILE, port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
