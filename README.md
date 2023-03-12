@@ -3,4 +3,4 @@ A chat application built with html, css, javascript and backend server in Flask 
 Flask sockets default to http protocol, in order to render https in production servers the http instance is passed as a proxy to orginal site with the help of a nginx reverse proxy server. Site is live and runs the https version. 
 Website: https://mychat-gumf.onrender.com
 Working on designs and more features
-Slow messages due to server constraints
+
