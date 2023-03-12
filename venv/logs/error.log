@@ -255,3 +255,76 @@
 2023/03/11 11:12:40 [warn] 5992#20732: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\New folder\venv/conf/nginx.conf:136
 2023/03/11 11:12:46 [error] 22268#21832: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
 2023/03/11 11:12:46 [error] 22268#21832: *1 "C:\Users\jaiga\Desktop\New folder\venv/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2023/03/12 09:19:25 [warn] 21256#548: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 09:19:25 [warn] 21256#548: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 09:19:25 [emerg] 21256#548: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 09:19:26 [warn] 15752#18800: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 09:19:26 [warn] 15752#18800: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 09:19:26 [emerg] 15752#18800: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 09:19:32 [warn] 20028#17968: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 09:19:32 [warn] 20028#17968: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 09:19:32 [emerg] 20028#17968: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 10:03:21 [warn] 10144#14096: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 10:03:21 [warn] 10144#14096: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 10:03:21 [emerg] 10144#14096: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 10:50:43 [warn] 21828#22604: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 10:50:43 [warn] 21828#22604: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 10:50:43 [emerg] 21828#22604: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:20:52 [warn] 19324#12064: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:20:52 [warn] 19324#12064: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:20:52 [emerg] 19324#12064: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:20:53 [warn] 14984#16636: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:20:53 [warn] 14984#16636: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:20:53 [emerg] 14984#16636: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:55:57 [warn] 10932#11728: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:55:57 [warn] 10932#11728: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:55:57 [emerg] 10932#11728: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:55:58 [warn] 17080#18528: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:55:58 [warn] 17080#18528: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:55:58 [emerg] 17080#18528: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:56:33 [warn] 1496#16048: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:56:33 [warn] 1496#16048: server name "https://mychat-m5lg.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:56:33 [emerg] 1496#16048: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/12 12:57:24 [warn] 15436#22792: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:57:24 [warn] 15436#22792: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:57:24 [emerg] 15436#22792: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 12:57:26 [warn] 21056#17660: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:57:26 [warn] 21056#17660: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:57:26 [emerg] 21056#17660: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 12:58:07 [warn] 9164#23292: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 12:58:07 [warn] 9164#23292: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 12:58:07 [emerg] 9164#23292: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 13:19:39 [warn] 14652#22520: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 13:19:39 [warn] 14652#22520: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 13:19:39 [emerg] 14652#22520: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 13:44:11 [warn] 21968#22936: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 13:44:11 [warn] 21968#22936: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 13:44:11 [emerg] 21968#22936: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 13:44:12 [warn] 2844#12824: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 13:44:12 [warn] 2844#12824: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 13:44:12 [emerg] 2844#12824: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:37:52 [warn] 3140#4240: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:37:52 [warn] 3140#4240: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:37:52 [emerg] 3140#4240: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:37:54 [warn] 2060#19220: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:37:54 [warn] 2060#19220: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:37:54 [emerg] 2060#19220: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:38:21 [warn] 22072#21060: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:38:21 [warn] 22072#21060: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:38:21 [emerg] 22072#21060: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:38:22 [warn] 17024#18560: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:38:22 [warn] 17024#18560: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:38:22 [emerg] 17024#18560: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:38:58 [warn] 16748#15444: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:38:58 [warn] 16748#15444: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:38:58 [emerg] 16748#15444: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:39:24 [warn] 13984#15548: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:39:24 [warn] 13984#15548: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:39:24 [notice] 13984#15548: signal process started
+2023/03/12 14:39:24 [error] 13984#15548: OpenEvent("Global\ngx_quit_19376") failed (2: The system cannot find the file specified)
+2023/03/12 14:40:55 [warn] 6624#15228: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:40:55 [warn] 6624#15228: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:40:55 [emerg] 6624#15228: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2023/03/12 14:41:32 [warn] 19256#16328: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/12 14:41:32 [warn] 19256#16328: server name "https://example2.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/12 14:41:32 [emerg] 19256#16328: CreateDirectory() "C:\Users\jaiga\Desktop\my-chat-application\venv/temp/client_body_temp" failed (3: The system cannot find the path specified)

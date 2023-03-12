@@ -1,16 +1,62 @@
 
 body{
-    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    background-image: url(background.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 1000px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+    background-color: transparent!important;
+    margin-top: 25px;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 10%;
+    margin-left: 3%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .icon{
-    color: #f8b707;
+    color: rgb(20,185,127);
     font-size: 30px;
 }
 
-#navbar{
-    display: flex;
-    justify-content: space-between;
+.login-link{
+    background-color: rgb(20,185,127);
+    border-radius: 2rem;
+    color: white;
+    width: 200px;
 }
 
 .nav-item{
@@ -20,14 +66,19 @@ body{
 .main-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     min-height: 800px;
+    position: relative;
+}
+
+.home-header{
+    font-size: 2rem;
 }
 
 .home-description{
     color: black;
     z-index: 2;
-    font-size: 2rem;
+    font-size: 1.3rem;
     opacity: 0.9;
     font-weight: 600;
 }
@@ -41,16 +92,17 @@ body{
 }
 
 .home-container {
-    background-image: url(chat_app_background.jpg);
     z-index: 1;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     width: 40%;
-    margin-top: 3rem;
+    margin-top: 35px;
     padding: 3rem;
     border-radius: 2rem;
     height: fit-content;
+    position: relative;
+    left: 25%;
 }
 
 .form-header{
@@ -58,62 +110,261 @@ body{
 }
 
 .form-container{
-    margin-top: 3rem;
-    width: 30%;
+    margin-top: 90px;
+    width: 25%;
     height: 600px;
+    position: relative;
+    left: 22%;
+    /* top: 0%; */
+}
+
+.form-floating>.form-control, .form-floating>.form-select {
+    height: calc(2.7rem + 2px);
+    line-height: 1.25;
+}
+
+.form-floating>label {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
 }
 
 .gender-selection{
     display: flex;
     flex-direction: row;
+    font-size: 14px;
+    margin: 0!important;
+    flex-wrap: wrap;
 }
 
 .gender-selection>div{
-    margin-left: 1em;
+    margin-left: 10px;
 }
 
 .form-container>p{
-    font-size: 1.5rem;
-}
-
-.form-container>button{
-    background: darkgoldenrod;
-    width: 60%;
-    border: 2px solid goldenrod;
-}
-
-.form-container>button:hover{
-    background: goldenrod;
-    border: 2px solid goldenrod;
+    font-size: 1.6rem;
 }
 
 .form-register>button{
     width: 60%;
     margin-left: 25%;
-    background: darkgoldenrod;
-    border: 2px solid goldenrod;
+    background: #21a87b;
+    border: none;
 }
 
 .form-register>button:hover{
-    background: goldenrod;
-    border: 2px solid goldenrod;
+    cursor: pointer;
+    background: #21a87b;
+}
+
+.footer-container{
+    position: relative;
+    top: -120px;
+    width: 50%;
+    left: 62%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
 }
 
 #messages-container{
-    margin: auto;
-    text-align: center;
+    /* margin: 0px auto; */
+    /* text-align: center; */
     font-size: 2rem;
-    background-color: #b88806;
+    /* background-color: #b88806; */
+    position: absolute;
+    /* text-align: center; */
+    width: fit-content;
+    top: 115px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .login-button>a{
     color: white;
     text-decoration: none;
 }
-
-
-@media  screen and (max-width: 1000px){
+@media  screen and (max-width: 1700px){
+    .home-container{
+        margin-top: 35px;
+    }
+    .form-container{
+        margin-top: 90px;
+    }
+    .home-header{
+        font-size: 35px;
+    }
     .home-description{
+        font-size: 22px;
+    }
+    .home-caption{
+        font-size: 21px;
+    }
+    .form-register>button{
+        font-size: 16px;
+    }
+    .form-container>button{
+        font-size: 16px;
+    }
+    .form-container>p{
+        font-size: 26px;
+    }
+    .footer-container{
+        top: -120px;
+    }
+    .footer-description{
+        font-size: 20px;
+    }
+}
+
+@media  screen and (max-width: 1350px){
+    .home-container{
+        margin-top: 35px;
+    }
+    .form-container{
+        margin-top: 77px;
+    }
+    .home-header{
+        font-size: 30px;
+    }
+    .home-description{
+        font-size: 20px;
+    }
+    .home-caption{
+        font-size: 20px;
+    }
+    .form-register>button{
+        font-size: 16px;
+    }
+    .form-container>button{
+        font-size: 16px;
+    }
+    .form-container>p{
+        font-size: 20px;
+    }
+    .footer-description{
+        font-size: 16px;
+    }
+    .footer-container{
+        top: -120px;
+    }
+}
+@media  screen and (max-width: 1000px){
+    .home-container{
+        margin-top: 35px;
+    }
+    .form-container{
+        margin-top: 90px;
+    }
+    .home-header{
+        font-size: 28px;
+    }
+    .home-description{
+        font-size: 18px;
+    }
+    .home-caption{
+        font-size: 18px;
+    }
+    .form-register>button{
+        font-size: 16px;
+    }
+    .form-container>button{
+        font-size: 16px;
+    }
+    .form-container>p{
+        font-size: 17px;
+    }
+    .footer-container{
+        top: -110px;
+    }
+    .footer-description{
+        font-size: 16px;
+    }
+}
+@media  screen and (max-width: 800px){
+    .home-container{
+        margin-top: 35px;
+    }
+    .form-container{
+        margin-top: 95px;
+    }
+    .home-header{
+        font-size: 25px;
+    }
+    .home-description{
+        font-size: 15px;
+    }
+    .home-caption{
+        font-size: 15px;
+    }
+    .form-register>button{
+        font-size: 16px;
+    }
+    .form-container>button{
+        font-size: 16px;
+    }
+    .form-container>p{
+        font-size: 17px;
+    }
+    .footer-container{
+        top: -85px;
+    }
+    .footer-description{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px){
+    .home-container{
+        margin-top: 20px;
+    }
+    .form-container{
+        margin-top: 106px;
+    }
+    .home-header{
+        font-size: 20px;
+    }
+    .home-description{
+        font-size: 12px;
+    }
+    .home-caption{
+        font-size: 12px;
+    }
+    .form-register>button{
+        font-size: 16px;
+    }
+    .form-container>button{
+        font-size: 16px;
+    }
+    .form-container>p{
+        font-size: 15px;
+    }
+    .footer-container{
+        top: -76px;
+    }
+    .footer-description{
+        font-size: 15px;
+    }
+}
+@media  screen and (max-width: 400px){
+    .home-container{
+        margin-top: 35px;
+    }
+    .form-container{
+        margin-top: 90px;
+    }
+    .home-header{
+        font-size: 30px;
+    }
+    .home-description{
+        font-size: 1.5rem;
+    }
+    .home-caption{
         font-size: 1.5rem;
     }
     .form-register>button{
@@ -122,31 +373,13 @@ body{
     .form-container>button{
         font-size: 16px;
     }
-}
-@media  screen and (max-width: 800px){
-    .home-description{
-        font-size: 1.2rem;
-    }
-    .form-register>button{
+    .form-container>p{
         font-size: 14px;
     }
-    .form-container>button{
-        font-size: 14px;
+    .footer-container{
+        top: -120px;
     }
-}
-@media screen and (max-width: 600px){
-    .home-description{
-        font-size: 1rem;
-    }
-    .form-register>button{
-        font-size: 12px;
-    }
-    .form-container>button{
-        font-size: 12px;
-    }
-}
-@media  screen and (max-width: 400px){
-    .home-description{
-        font-size: 0.7rem;
+    .footer-description{
+        font-size: 16px;
     }
 }
