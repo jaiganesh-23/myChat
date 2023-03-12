@@ -365,7 +365,7 @@ body{
         margin-top: 20px;
     }
     .form-container{
-        margin-top: 106px;
+        margin-top: 90px;
     }
     .home-header{
         font-size: 20px;
@@ -392,7 +392,8 @@ body{
         font-size: 15px;
     }
     .navbar-nav{
-        width: 100%;
+        width: 80%;
+        margin-left: 10%;
     }
     .login-link{
         width: 140px;
@@ -443,5 +444,30 @@ body{
     #messages-container{
         top: 95px;
         font-size: 20px;
+    }
+}
+
+@media (min-width: 0px){
+    .navbar-expand-sm {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-sm .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-sm .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-sm .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+    .navbar-nav{
+        width: 70%;
+        margin-left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 100px;
     }
 }
