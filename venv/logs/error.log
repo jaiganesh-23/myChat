@@ -367,3 +367,123 @@
 2023/03/13 00:38:39 [warn] 4212#24396: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
 2023/03/13 00:38:39 [warn] 4212#24396: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
 2023/03/13 00:38:39 [emerg] 4212#24396: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 01:42:19 [warn] 12000#9912: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 01:42:19 [warn] 12000#9912: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 01:42:19 [warn] 12000#9912: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 01:42:19 [emerg] 12000#9912: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 01:42:21 [warn] 2768#4868: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 01:42:21 [warn] 2768#4868: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 01:42:21 [warn] 2768#4868: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 01:42:21 [emerg] 2768#4868: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 01:42:27 [warn] 23720#23820: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 01:42:27 [warn] 23720#23820: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 01:42:27 [warn] 23720#23820: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 01:42:27 [emerg] 23720#23820: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 10:58:23 [warn] 16044#23228: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 10:58:23 [warn] 16044#23228: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 10:58:23 [warn] 16044#23228: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 10:58:23 [emerg] 16044#23228: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 10:58:25 [warn] 10212#17072: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 10:58:25 [warn] 10212#17072: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 10:58:25 [warn] 10212#17072: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 10:58:25 [emerg] 10212#17072: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 10:58:30 [warn] 25540#9840: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 10:58:30 [warn] 25540#9840: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 10:58:30 [warn] 25540#9840: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 10:58:30 [emerg] 25540#9840: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:03 [warn] 2356#18196: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:03 [warn] 2356#18196: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:03 [warn] 2356#18196: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:03 [emerg] 2356#18196: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:06 [warn] 6624#3316: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:06 [warn] 6624#3316: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:06 [warn] 6624#3316: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:06 [emerg] 6624#3316: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:20 [warn] 2888#19272: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:20 [warn] 2888#19272: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:20 [warn] 2888#19272: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:20 [emerg] 2888#19272: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:25 [warn] 19764#18580: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:25 [warn] 19764#18580: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:25 [warn] 19764#18580: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:25 [emerg] 19764#18580: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:27 [warn] 1628#23664: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:27 [warn] 1628#23664: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:27 [warn] 1628#23664: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:27 [emerg] 1628#23664: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:30 [warn] 15836#9580: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:30 [warn] 15836#9580: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:30 [warn] 15836#9580: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:30 [emerg] 15836#9580: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:03:35 [warn] 21656#3200: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:03:35 [warn] 21656#3200: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:03:35 [warn] 21656#3200: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:03:35 [emerg] 21656#3200: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 11:49:25 [warn] 24220#13360: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 11:49:25 [warn] 24220#13360: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 11:49:25 [warn] 24220#13360: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 11:49:25 [emerg] 24220#13360: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:04:54 [warn] 14156#22168: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:04:54 [warn] 14156#22168: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:04:54 [warn] 14156#22168: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:04:54 [emerg] 14156#22168: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:05:02 [warn] 12480#16688: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:05:02 [warn] 12480#16688: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:05:02 [warn] 12480#16688: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:05:02 [emerg] 12480#16688: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:05:09 [warn] 13124#21160: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:05:09 [warn] 13124#21160: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:05:09 [warn] 13124#21160: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:05:09 [emerg] 13124#21160: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:05:39 [warn] 17324#18428: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:05:39 [warn] 17324#18428: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:05:39 [warn] 17324#18428: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:05:39 [emerg] 17324#18428: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:07:47 [warn] 264#18616: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:07:47 [warn] 264#18616: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:07:47 [warn] 264#18616: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:07:47 [emerg] 264#18616: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:09:38 [warn] 17804#21364: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:09:38 [warn] 17804#21364: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:09:38 [warn] 17804#21364: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:09:38 [emerg] 17804#21364: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:12:08 [warn] 1720#3120: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:12:08 [warn] 1720#3120: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:12:08 [warn] 1720#3120: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:12:08 [emerg] 1720#3120: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:12:30 [warn] 21304#15620: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:12:30 [warn] 21304#15620: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:12:30 [warn] 21304#15620: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:12:30 [emerg] 21304#15620: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:01 [warn] 11404#23600: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:01 [warn] 11404#23600: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:01 [warn] 11404#23600: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:01 [emerg] 11404#23600: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:27 [warn] 23600#16556: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:27 [warn] 23600#16556: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:27 [warn] 23600#16556: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:27 [emerg] 23600#16556: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:30 [warn] 12156#7304: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:30 [warn] 12156#7304: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:30 [warn] 12156#7304: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:30 [emerg] 12156#7304: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:33 [warn] 24696#21304: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:33 [warn] 24696#21304: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:33 [warn] 24696#21304: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:33 [emerg] 24696#21304: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:36 [warn] 6532#17372: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:36 [warn] 6532#17372: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:36 [warn] 6532#17372: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:36 [emerg] 6532#17372: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:13:38 [warn] 11708#22164: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:13:38 [warn] 11708#22164: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:13:38 [warn] 11708#22164: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:13:38 [emerg] 11708#22164: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:14:23 [warn] 19572#11184: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:14:23 [warn] 19572#11184: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:14:23 [warn] 19572#11184: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:14:23 [emerg] 19572#11184: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/13 12:17:21 [warn] 4996#17720: server name "https:/example1.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/13 12:17:21 [warn] 4996#17720: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/13 12:17:21 [warn] 4996#17720: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\jaiga\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/13 12:17:21 [emerg] 4996#17720: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32

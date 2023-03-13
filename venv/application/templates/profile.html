@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}My Chat{% endblock %}
+{% block css %}<link rel="stylesheet" href="../static/profile.css">{% endblock %}
+
+{% block content %}
+<div id="messages-container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="flash-msg">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+<div class="main-container">
+    <div class="profile-section">
+        <p>Profile Section</p>
+    </div>
+    <div class="user-details">
+        <p>User Details</p>
+    </div>
+</div>
+
+<script src="../static/profile.js"></script>
+{% endblock %}

@@ -307,7 +307,9 @@ body{
         font-size: 16px;
     }
     .navbar-nav{
-        width: 100%;
+        width: 80%;
+        left: 10%;
+        font-size: 16px;
     }
     .login-link{
         width: 180px;
@@ -350,7 +352,8 @@ body{
     }
     .navbar-nav{
         width: 80%;
-        margin-left: 10%;
+        left: 10%;
+        font-size: 14px;
     }
     .login-link{
         width: 160px;
@@ -393,7 +396,8 @@ body{
     }
     .navbar-nav{
         width: 80%;
-        margin-left: 10%;
+        left: 10%;
+        font-size: 14px;
     }
     .login-link{
         width: 140px;
@@ -436,7 +440,8 @@ body{
     }
     .navbar-nav{
         width: 80%;
-        margin-left: 10%;
+        left: 10%;
+        font-size: 14px;
     }
     .login-link{
         width: 120px;
@@ -463,8 +468,8 @@ body{
         flex-basis: auto;
     }
     .navbar-nav{
-        width: 70%;
-        margin-left: 10%;
+        width: 80%;
+        margin-left: 20%;
         font-size: 14px;
     }
     .login-link{

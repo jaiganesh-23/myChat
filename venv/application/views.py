@@ -114,6 +114,33 @@ def friend_request(friend_name=None):
         user_db.register_friend(user_name, friend_name)
         return redirect(url_for("views.user"))
 
+@view.route("/get_user_details/<user_name>")
+def get_user_details(user_name):
+    """
+    :return: a json object storing name of logged in user
+    """
+    print("user: " +  user_name)
+    return user_name
+
+
+@view.route("/profile")
+@view.route("/profile/<user_name>")
+def get_profile(user_name = None):
+    if USER_NAME not in session:
+        flash("You are not logged in to view your profile")
+        return redirect(url_for("views.home"))
+    
+    else:
+        user_name = session[USER_NAME]
+        user_db = user_Db()
+        found_user = user_db.check_user(user_name)
+        if(found_user):
+            return render_template("profile.html", **{"user": user_name})
+        else:
+            flash("Profile for requested user does not exist.")
+            return redirect(url_for("views.home"))
+
+
 
 
 
