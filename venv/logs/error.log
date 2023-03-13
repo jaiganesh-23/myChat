@@ -499,3 +499,11 @@
 2023/03/13 22:37:59 [warn] 10268#1980: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:127
 2023/03/13 22:37:59 [warn] 10268#1980: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:136
 2023/03/13 22:37:59 [emerg] 10268#1980: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/14 02:31:45 [warn] 14420#14640: server name "https:/example1.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/14 02:31:45 [warn] 14420#14640: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/14 02:31:45 [warn] 14420#14640: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/14 02:31:45 [emerg] 14420#14640: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32
+2023/03/14 02:31:47 [warn] 10036#584: server name "https:/example1.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:119
+2023/03/14 02:31:47 [warn] 10036#584: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:127
+2023/03/14 02:31:47 [warn] 10036#584: server name "https://mychat-gumf.onrender.com" has suspicious symbols in C:\Users\108119046\Desktop\my-chat-application\venv/conf/nginx.conf:136
+2023/03/14 02:31:47 [emerg] 10036#584: could not build server_names_hash, you should increase server_names_hash_bucket_size: 32

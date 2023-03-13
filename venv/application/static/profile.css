@@ -208,3 +208,307 @@ body{
 }
 
 
+@media  screen and (max-width: 1700px){
+    .name-top{
+        font-size: 40px;
+    }
+    .name{
+        font-size: 60px;
+    }
+    .user-name{
+        font-size: 65px;
+    }
+    .bn{
+        font-size: 20px;
+    }
+    .profile-user-name{
+        font-size: 40px;
+    }
+    .profile-name{
+        font-size: 26px;
+    }
+    .bio-header{
+        font-size: 40px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 20px;
+    }
+    .friends-header{
+        font-size: 40px;
+    }
+    .email{
+        font-size: 35px;
+    }
+    .navbar-nav{
+        width: 100%;
+    }
+    .login-link{
+        width: 200px;
+    }
+    #messages-container{
+        top: 110px;
+        font-size: 2rem;
+    }
+}
+
+@media  screen and (max-width: 1350px){
+    .name-top{
+        font-size: 40px;
+    }
+    .name{
+        font-size: 60px;
+    }
+    .user-name{
+        font-size: 65px;
+    }
+    .bn{
+        font-size: 19px;
+    }
+    .profile-user-name{
+        font-size: 40px;
+    }
+    .profile-name{
+        font-size: 26px;
+    }
+    .bio-header{
+        font-size: 40px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 20px;
+    }
+    .friends-header{
+        font-size: 40px;
+    }
+    .email{
+        font-size: 35px;
+    }
+    .navbar-nav{
+        width: 100%;
+    }
+    .login-link{
+        width: 200px;
+    }
+    #messages-container{
+        top: 110px;
+        font-size: 2rem;
+    }
+}
+@media  screen and (max-width: 1000px){
+    .name-top{
+        font-size: 38px;
+    }
+    .name{
+        font-size: 58px;
+    }
+    .user-name{
+        font-size: 63px;
+    }
+    .bn{
+        font-size: 18px;
+    }
+    .profile-user-name{
+        font-size: 38px;
+    }
+    .profile-name{
+        font-size: 24px;
+    }
+    .bio-header{
+        font-size: 38px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 19px;
+    }
+    .friends-header{
+        font-size: 38px;
+    }
+    .email{
+        font-size: 33px;
+    }
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 16px;
+    }
+    .login-link{
+        width: 180px;
+    }
+    #messages-container{
+        top: 105px;
+        font-size: 2rem;
+    }
+}
+@media  screen and (max-width: 800px){
+    .name-top{
+        font-size: 33px;
+    }
+    .name{
+        font-size: 53px;
+    }
+    .user-name{
+        font-size: 58px;
+    }
+    .bn{
+        font-size: 17px;
+    }
+    .profile-user-name{
+        font-size: 33px;
+    }
+    .profile-name{
+        font-size: 22px;
+    }
+    .bio-header{
+        font-size: 33px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 16px;
+    }
+    .friends-header{
+        font-size: 33px;
+    }
+    .email{
+        font-size: 31px;
+    }
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 160px;
+    }
+    #messages-container{
+        top: 115px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 600px){
+    .name-top{
+        font-size: 30px;
+    }
+    .name{
+        font-size: 50px;
+    }
+    .user-name{
+        font-size: 55px;
+    }
+    .bn{
+        font-size: 13px;
+    }
+    .profile-user-name{
+        font-size: 30px;
+    }
+    .profile-name{
+        font-size: 20px;
+    }
+    .bio-header{
+        font-size: 30px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 16px;
+    }
+    .friends-header{
+        font-size: 30px;
+    }
+    .email{
+        font-size: 29px;
+    }
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 140px;
+    }
+    #messages-container{
+        top: 120px;
+        font-size: 20px;
+    }
+}
+@media  screen and (max-width: 400px){
+    .name-top{
+        font-size: 28px;
+    }
+    .name{
+        font-size: 48px;
+    }
+    .user-name{
+        font-size: 53px;
+    }
+    .bn{
+        font-size: 11px;
+    }
+    .profile-user-name{
+        font-size: 28px;
+    }
+    .profile-name{
+        font-size: 19px;
+    }
+    .bio-header{
+        font-size: 28px;
+    }
+    .header-hr{
+        width: 90%;
+    }
+    .bio{
+        font-size: 15px;
+    }
+    .friends-header{
+        font-size: 28px;
+    }
+    .email{
+        font-size: 27px;
+    }
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 120px;
+    }
+    #messages-container{
+        top: 95px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 0px){
+    .navbar-expand-sm {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-sm .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-sm .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-sm .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+    .navbar-nav{
+        width: 80%;
+        margin-left: 20%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 100px;
+    }
+}

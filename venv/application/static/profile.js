@@ -48,15 +48,15 @@ async function load_user_details(){
     buttons_div.classList.add("buttons-div");
 
     let edit_profile_button = document.createElement("button");
-    edit_profile_button.classList.add("edit-profile-button");
+    edit_profile_button.classList.add("edit-profile-button", "bn");
     edit_profile_button.textContent = "Edit Profile";
 
     let edit_settings_button = document.createElement("button");
-    edit_settings_button.classList.add("edit-settings-button");
-    edit_settings_button.textContent = "Edit Settings";
+    edit_settings_button.classList.add("edit-settings-button", "bn");
+    edit_settings_button.textContent = "Settings";
 
     let delete_account_button = document.createElement("button");
-    delete_account_button.classList.add("delete-account-button");
+    delete_account_button.classList.add("delete-account-button", "bn");
     delete_account_button.textContent = "Delete Account";
 
 
