@@ -119,8 +119,15 @@ def get_user_details(user_name):
     """
     :return: a json object storing name of logged in user
     """
-    print("user: " +  user_name)
-    return user_name
+    user_db = user_Db()
+    found_user = user_db.check_user(user_name)
+    if found_user:
+        user = user_db.get_user(user_name)
+        return jsonify(user)
+    else:
+        return None
+        
+    
 
 
 @view.route("/profile")

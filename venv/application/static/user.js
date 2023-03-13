@@ -78,7 +78,7 @@ async function add_chat_rooms(){
     var rooms = await load_rooms();
     console.log(rooms);
     for(let i=0;i<rooms.length;i++){
-        room = rooms[i];
+        let room = rooms[i];
         var room_name = room["chat_room"];
         room_name = room_name.toUpperCase();
         var room_div = `<div class = "chat-room" onclick = "loadRoom(this)">
