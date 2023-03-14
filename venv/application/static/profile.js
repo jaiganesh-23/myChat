@@ -115,7 +115,7 @@ async function load_profile_details(){
         let friend_name = rooms[i]["friend"];
         friend_div.innerHTML = `<div class = "friend-div">
                                     <i class='bx bx-user'></i>
-                                    <h4>${room_name}</h4>
+                                    <h4>${friend_name}</h4>
                                 </div>
                                 <hr>`;
         friends_container.appendChild(friend_div);
