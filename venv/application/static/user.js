@@ -126,59 +126,65 @@ async function load_chat(chat_room) {
 
 add_chat_rooms();
 
-var socket = io.connect("https://" + document.domain + ":" + location.port);
-socket.on("connect", async function () {
-    //setTimeout(function(){}, 5000);
-    var usr_name = await load_name();
-    var room_name = document.getElementById("chat-room-header").textContent;
-    console.log(usr_name);
-    if (usr_name != "") {
-        socket.emit("receive_message", {
-            content: usr_name + " just connected to the server!",
-            chat_room: room_name,
-            sender: usr_name,
-            connect: true,
-        });
-        socket.emit("receive_message", {
-            content: "<----- Welcome to the server " + usr_name + " ----->",
-            chat_room: room_name,
-            sender: usr_name,
-            connect: true,
-        });
-    }
-    var send_message = $("button#send").on("click", async function (e) {
-        e.preventDefault();
+var socket;
+window.addEventListener("DOMContentLoaded", function(){
+    socket = io.connect("https://" + document.domain + ":" + location.port);
 
-        //get input from message box
-        let msg_input = document.getElementById("msg");
-        let user_input = msg_input.value;
-        let user_name = await load_name();
-        let room_name = document.getElementById("chat-room-header").textContent;
-        console.log(user_input);
-        //clear msg box value
-        msg_input.value = "";
-
-        //send message to other users
+    socket.on("connect", async function () {
+        //setTimeout(function(){}, 5000);
+        var usr_name = await load_name();
+        var room_name = document.getElementById("chat-room-header").textContent;
+        console.log(usr_name);
+        if (usr_name != "") {
+            socket.emit("receive_message", {
+                content: usr_name + " just connected to the server!",
+                chat_room: room_name,
+                sender: usr_name,
+                connect: true,
+            });
+            socket.emit("receive_message", {
+                content: "<----- Welcome to the server " + usr_name + " ----->",
+                chat_room: room_name,
+                sender: usr_name,
+                connect: true,
+            });
+        }
+        var send_message = $("button#send").on("click", async function (e) {
+            e.preventDefault();
+    
+            //get input from message box
+            let msg_input = document.getElementById("msg");
+            let user_input = msg_input.value;
+            let user_name = await load_name();
+            let room_name = document.getElementById("chat-room-header").textContent;
+            console.log(user_input);
+            //clear msg box value
+            msg_input.value = "";
+    
+            //send message to other users
+            socket.emit("receive_message", {
+                content: user_input,
+                chat_room: room_name,
+                sender: user_name,
+            });
+        });
+    });
+    socket.on("disconnect", async function () {
+        var user_name = await load_name();
+        var room_name = document.getElementById("chat-room-header").textContent;
         socket.emit("receive_message", {
-            content: user_input,
+            content: user_name + " just left the server...",
             chat_room: room_name,
             sender: user_name,
         });
     });
-});
-socket.on("disconnect", async function () {
-    var user_name = await load_name();
-    var room_name = document.getElementById("chat-room-header").textContent;
-    socket.emit("receive_message", {
-        content: user_name + " just left the server...",
-        chat_room: room_name,
-        sender: user_name,
-    });
-});
-socket.on("message response", function (msg) {
-    console.log(msg);
-    add_message(msg, true);
+    socket.on("message response", function (msg) {
+        console.log(msg);
+        add_message(msg, true);
+    })
 })
+
+
 
 
 
