@@ -208,6 +208,25 @@ body{
     color: green;
 }
 
+#send{
+    background-color: rgb(20,185,127);
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+    width: fit-content;
+    padding: 10px 10px;
+    margin-left: 25px;
+}
+
+.send-icon{
+    color: white;
+    font-size: 16px;
+}
+
+#msg{
+    width: 60%;
+}
+
 @media  screen and (max-width: 1700px){
     .chat-room i{
         font-size: 60px;
@@ -227,6 +246,16 @@ body{
     #messages-container{
         top: 110px;
         font-size: 2rem;
+        color: white;
+    }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    
+    .send-icon{
         color: white;
     }
 }
@@ -250,6 +279,16 @@ body{
     #messages-container{
         top: 110px;
         font-size: 2rem;
+        color: white;
+    }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    
+    .send-icon{
         color: white;
     }
 }
@@ -276,6 +315,16 @@ body{
         font-size: 2rem;
         color: white;
     }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    
+    .send-icon{
+        color: white;
+    }
 }
 @media  screen and (max-width: 800px){
     .chat-room i{
@@ -300,6 +349,17 @@ body{
         font-size: 24px;
         color: white;
     }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    
+    .send-icon{
+        color: white;
+        font-size: 14px;
+    }
 }
 @media screen and (max-width: 600px){
     .chat-room i{
@@ -323,6 +383,17 @@ body{
         top: 120px;
         font-size: 20px;
         color: white;
+    }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+    
+    .send-icon{
+        color: white;
+        font-size: 12px;
     }
 }
 @media screen and (max-width: 500px){
@@ -357,6 +428,17 @@ body{
         top: 120px;
         font-size: 20px;
         color: white;
+    }
+    #send{
+        background-color: rgb(20,185,127);
+        color: white;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    
+    .send-icon{
+        color: white;
+        font-size: 10px;
     }
 }
 

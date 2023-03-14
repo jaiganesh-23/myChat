@@ -32,6 +32,20 @@ async function load_user_details(){
     profile_img.setAttribute("src", "../static/male-icon.jpg")
     profile_img.classList.add("profile-img")
 
+    let profile_img_upload = document.createElement("input");
+    profile_img_upload.setAttribute("id", "profile-img-upload");
+    profile_img_upload.setAttribute("type", "file");
+    profile_img_upload.setAttribute("multiple", "file");
+    profile_img_upload.setAttribute("name", "upload");
+
+    let profile_img_button = document.createElement("button");
+    profile_img_button.setAttribute("id", "img-upload-btn");
+    profile_img_button.innerHTML = "<i class='bx bxs-plus-circle upload-icon'></i>";
+
+    let profile_img_p = document.createElement("p");
+    profile_img_p.classList.add("profile-img-p");
+    profile_img_p.textContent = "Choose and Upload Image";
+
     let user_name_p = document.createElement("p");
     user_name_p.textContent = user_name;
     user_name_p.classList.add("user-name");
@@ -64,6 +78,9 @@ async function load_user_details(){
 
     profile_section.appendChild(name_top);
     profile_section.appendChild(profile_img);
+    profile_section.appendChild(profile_img_button);
+    profile_section.appendChild(profile_img_upload);
+    profile_section.appendChild(profile_img_p);
     profile_section.appendChild(name_p);
     profile_section.appendChild(user_name_p);
     profile_section.appendChild(email_p);
@@ -109,15 +126,16 @@ async function load_profile_details(){
     header_hr.classList.add("header-hr");
 
     let friends_container = document.createElement("div");
+    friends_container.classList.add("friends-container");
 
     for(let i=1;i<rooms.length;i++){
         let friend_div = document.createElement("div");
+        friend_div.classList.add("friend-div");
         let friend_name = rooms[i]["friend"];
-        friend_div.innerHTML = `<div class = "friend-div">
+        friend_div.innerHTML = `
                                     <i class='bx bx-user'></i>
-                                    <h4>${friend_name}</h4>
-                                </div>
-                                <hr>`;
+                                    <p>${friend_name}</p>
+                                `;
         friends_container.appendChild(friend_div);
     }
 

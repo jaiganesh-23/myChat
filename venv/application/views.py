@@ -114,6 +114,18 @@ def friend_request(friend_name=None):
         user_db.register_friend(user_name, friend_name)
         return redirect(url_for("views.user"))
 
+@view.route("/update_profile_img/<file_name>")
+def update_profile_img(file_name=None):
+    if USER_NAME not in session:
+        flash("You are not logged in to update profile img")
+        return redirect(url_for("views.home"))
+
+    else:
+        user_name = session[USER_NAME]
+        user_db = user_Db()
+        user_db.update_profile_img(user_name, '/venv/application/static/profile-images/'+file_name)
+        return redirect(url_for("views.user"))
+
 @view.route("/get_user_details/<user_name>")
 def get_user_details(user_name):
     """

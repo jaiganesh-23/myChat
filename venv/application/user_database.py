@@ -7,6 +7,7 @@ import time
 FILE = "users.db"
 USER_TABLE = "Usertable"
 ROOMS_TABLE = "Roomtable"
+IMAGES_TABLE = "Imagetable"
 
 
 class user_Db:
@@ -34,16 +35,23 @@ class user_Db:
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT,
                     friends TEXT, chat_rooms TEXT)"""
 
+        query3 = f"""CREATE TABLE IF NOT EXISTS {IMAGES_TABLE}
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT,
+                    img_path TEXT)"""
+
         self.cursor.execute(query1)
         self.cursor.execute(query2)
+        self.cursor.execute(query3)
         self.conn.commit()
 
     def register_user(self, name, username, email, password, age, gender):
         query1 = f"""INSERT INTO {USER_TABLE} VALUES (? ,?, ?, ?, ?, ?, ?)"""
 
         query2 = f"""INSERT INTO {ROOMS_TABLE} VALUES (?, ?, ?, ?, ?)"""
+        query3 = f"""INSERT INTO {IMAGES_TABLE} VALUES (?, ?, ?, ?)"""
         self.cursor.execute(query1, (None, name, username, email, password, age, gender))
         self.cursor.execute(query2, (None, name, username, "default_friend", "common_room"))
+        self.cursor.execute(query3, (None, name, username, "./static/profile-images/male-icon.jpg"))
         self.conn.commit()
 
     def register_friend(self, username, friend):
@@ -106,6 +114,13 @@ class user_Db:
         cursor.execute(query)
         users = cursor.fetchall()
         return users
+
+    def update_profile_img(self, username, img_path):
+        conn = sqlite3.connect(FILE)
+        cursor = conn.cursor()
+        query = f"UPDATE {IMAGES_TABLE} SET img_path = ? where username = ?"
+        cursor.execute(query, (img_path, username))
+        conn.commit()
 
 
 

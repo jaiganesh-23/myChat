@@ -89,6 +89,31 @@ body{
     border-radius: 33%;
 }
 
+#img-upload-btn{
+    position: relative;
+    font-size: 48px;
+    border-radius: 50%;
+    left: 70%;
+    top: -10%;
+    border: none;
+}
+
+#profile-img-upload{
+    display: block;
+    font-size: 25px;
+    width: 67%;
+    margin: 0 auto;
+}
+
+.profile-img-p{
+    position: relative;
+    /* left: 35%; */
+    top: -12%;
+    font-size: 21px;
+    width: fit-content;
+    margin: 0px auto;
+}
+
 .user-name{
     color: #1e2025;
     width: fit-content;
@@ -187,10 +212,17 @@ body{
 
 .friends-container{
     margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
-.friend-div{
+.friend-div, .friend-div p{
     display: flex;
+    justify-content: space-between;
+    font-size: 45px;
+    align-items: center;
+    color: #ece2d6;
 }
 
 .bio-header{
@@ -206,6 +238,7 @@ body{
     width: 80%;
     margin: 10px auto;
 }
+
 
 
 @media  screen and (max-width: 1700px){
