@@ -1,30 +1,45 @@
 
-async function add_message(msg, scroll){
+async function add_message(msg, scroll) {
     var message = msg["content"];
     var chat_room = msg["chat_room"];
     var usr_name = msg["sender"];
     var logged_usr_name = await load_name();
 
     var message_div = document.getElementById("messages");
-    var content = ``;
+    let content = document.createElement("div");
 
-    if (usr_name == logged_usr_name){
-        content = ` 
-                        <div class = "message">
-                            <p><span>${usr_name}</span>: ${message}</p>
-                        </div>
-                    `;
-    }
-    else{
-        content = `
-                        <div class = "message right">
-                            <p><span>${usr_name}</span>: ${message}</p>
-                        </div>
-                    `;
-    }
-    message_div.innerHTML += content;
 
-    if(scroll){
+    content.classList.add("message");
+    let m_p = document.createElement("p");
+    m_p.classList.add("msg");
+    m_p.innerHTML = `<span class="usr-name">${usr_name}</span>: ${message}`;
+    content.appendChild(m_p);
+
+    let m_span = m_p.childNodes[0];
+    m_span.addEventListener("mouseenter", (e) => {
+        let c_span = e.target;
+        let message_div = c_span.parentElement.parentElement;
+        let c_usr_name = c_span.textContent;
+
+        
+        
+        let add_m_p = document.createElement("a");
+        add_m_p.setAttribute("href", `/friend_request/${c_usr_name}`);
+        add_m_p.classList.add("add-friend");
+        add_m_p.innerHTML = `Add friend:${c_usr_name}`;
+        if(message_div.childNodes.length <2) message_div.prepend(add_m_p);
+    })
+    content.addEventListener("mouseleave", (e)=>{
+        let m_div = e.target;
+
+        let p_div = m_div.childNodes[0];
+        if(p_div.classList.contains("add-friend")) p_div.remove();
+    })
+
+    if(logged_usr_name != usr_name) content.classList.add("right");
+    message_div.appendChild(content);
+
+    if (scroll) {
         scrolltobottom("messages");
     }
 }
@@ -35,10 +50,10 @@ function scrolltobottom(id) {
     $("#" + id).animate({
         scrollTop: div.scrollHeight - div.clientHeight,
     },
-    500);
+        500);
 }
 
-async function load_name(){
+async function load_name() {
     return await fetch("/get_name")
         .then(async function (response) {
             return await response.json();
@@ -49,7 +64,7 @@ async function load_name(){
 }
 
 
-async function load_rooms(){
+async function load_rooms() {
     return await fetch("/get_rooms")
         .then(async function (response) {
             console.log(response);
@@ -60,9 +75,9 @@ async function load_rooms(){
         })
 }
 
-async function get_messages(room_name){
+async function get_messages(room_name) {
     return await fetch(`/get_messages/${room_name}`)
-        .then (async function (response) {
+        .then(async function (response) {
             console.log(response);
             return await response.json();
         })
@@ -73,13 +88,13 @@ async function get_messages(room_name){
 
 var username = load_name();
 
-async function add_chat_rooms(){
+async function add_chat_rooms() {
     var rooms_container = document.getElementById("rooms-container");
     var rooms = await load_rooms();
     console.log(rooms);
-    for(let i=0;i<rooms.length;i++){
+    for (let i = 0; i < rooms.length; i++) {
         let room = rooms[i];
-        var room_name = room["chat_room"];
+        var room_name = i==0? room["chat_room"]: room["friend"];
         room_name = room_name.toUpperCase();
         var room_div = `<div class = "chat-room" onclick = "loadRoom(this)">
                             <i class='bx bx-user'></i>
@@ -91,7 +106,7 @@ async function add_chat_rooms(){
     load_chat(rooms[0]["chat_room"]);
 }
 
-async function load_chat(chat_room){
+async function load_chat(chat_room) {
     var chat_container = document.getElementById("chat-container");
     var chat_room_header = document.getElementById("chat-room-header");
     chat_room_header.textContent = chat_room.toUpperCase();
@@ -100,9 +115,9 @@ async function load_chat(chat_room){
     let messages = await get_messages(chat_room.toLowerCase());
     let scroll = false;
     console.log(messages);
-    for(let i=0;i<messages.length;i++){
+    for (let i = 0; i < messages.length; i++) {
         msg = messages[i];
-        if(i == messages.length-1){
+        if (i == messages.length - 1) {
             scroll = true;
         }
         add_message(msg, scroll);
@@ -111,16 +126,16 @@ async function load_chat(chat_room){
 
 add_chat_rooms();
 
-var socket = io.connect("https://"+document.domain+ ":" +location.port);
-socket.on("connect", async function() {
+var socket = io.connect("https://" + document.domain + ":" + location.port);
+socket.on("connect", async function () {
     //setTimeout(function(){}, 5000);
     var usr_name = await load_name();
     var room_name = document.getElementById("chat-room-header").textContent;
     console.log(usr_name);
-    if(usr_name != ""){
+    if (usr_name != "") {
         socket.emit("receive_message", {
             content: usr_name + " just connected to the server!",
-            chat_room: room_name, 
+            chat_room: room_name,
             sender: usr_name,
             connect: true,
         });
@@ -131,7 +146,7 @@ socket.on("connect", async function() {
             connect: true,
         });
     }
-    var send_message = $("button#send").on("click", async function(e) {
+    var send_message = $("button#send").on("click", async function (e) {
         e.preventDefault();
 
         //get input from message box
@@ -165,11 +180,7 @@ socket.on("message response", function (msg) {
     add_message(msg, true);
 })
 
-function loadRoom(id){
-    var message_node_list = id.childNodes;
-    var room = message_node_list[3].textContent;
-    load_chat(room);
-}
+
 
 
 
