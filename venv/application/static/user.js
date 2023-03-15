@@ -108,9 +108,13 @@ async function add_chat_rooms() {
     for (let i = 0; i < rooms.length; i++) {
         let room = rooms[i];
         var room_name = i==0? room["chat_room"]: room["friend"];
+        var freind_name = room["friend"];
         room_name = room_name.toUpperCase();
+        let profile_img_path = await get_profile_img_path(freind_name);
+        let s_index = profile_img_path.indexOf("profile-images");
+        profile_img_path = "../static/" + profile_img_path.substring(s_index);
         var room_div = `<div class = "chat-room" onclick = "loadRoom(this)">
-                            <i class='bx bx-user'></i>
+                            <img src = ${profile_img_path} class="profile-icon">
                             <h4>${room_name}</h4>
                         </div>
                         <hr>`;

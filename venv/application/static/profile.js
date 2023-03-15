@@ -44,7 +44,10 @@ async function load_user_details(){
     name_top.classList.add("name-top");
 
     let profile_img = document.createElement("img")
-    profile_img.setAttribute("src", "../static/male-icon.jpg")
+    let profile_img_path = await get_profile_img_path(user_name);
+    let s_index = profile_img_path.indexOf("profile-images");
+    profile_img_path = "../static/" + profile_img_path.substring(s_index);
+    profile_img.setAttribute("src", profile_img_path);
     profile_img.classList.add("profile-img")
 
     let profile_img_upload = document.createElement("input");

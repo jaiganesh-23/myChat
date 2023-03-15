@@ -225,6 +225,10 @@ body{
     color: #ece2d6;
 }
 
+.friend-div p{
+    margin-left: 5px;
+}
+
 .bio-header{
     color: rgb(249,232,212);
     font-size: 40px;

@@ -38,10 +38,18 @@ class user_Db:
         query3 = f"""CREATE TABLE IF NOT EXISTS {IMAGES_TABLE}
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT,
                     img_path TEXT)"""
+        
+        
 
         self.cursor.execute(query1)
         self.cursor.execute(query2)
         self.cursor.execute(query3)
+
+        query = f"Select * from {IMAGES_TABLE} where username = ?"
+        user = self.conn.execute(query, ("default_friend",))
+        if(user == None):
+            query4 = f"""INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"""
+            self.cursor.execute(query4, (None, "default_friend", "default_friend", "./application/static/profile-images/male-icon.jpg"))
         self.conn.commit()
 
     def register_user(self, name, username, email, password, age, gender):
