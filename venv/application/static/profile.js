@@ -16,6 +16,21 @@ async function load_profile(username){
         });
 }
 
+async function get_profile_img_path(username){
+    return await fetch("/get_profile_img/" + username)
+        .then(async function (response) {
+            return await response.json();
+        });
+}
+
+async function update_profile_img(){
+    let user_name = await load_name();
+    let img_path = await get_profile_img_path(user_name);
+    let s_index = img_path.indexOf("profile-images");
+    img_path = "../static/" + img_path.substring(s_index);
+    let profile_img = document.querySelector(".profile-img");
+    profile_img.setAttribute("src", img_path);
+}
 
 async function load_user_details(){
     let user_name = await load_name();
@@ -41,6 +56,34 @@ async function load_user_details(){
     let profile_img_button = document.createElement("button");
     profile_img_button.setAttribute("id", "img-upload-btn");
     profile_img_button.innerHTML = "<i class='bx bxs-plus-circle upload-icon'></i>";
+
+    profile_img_button.addEventListener('click', function () {
+        console.log("clicked");
+        let form_data = new FormData();
+        let ins = document.getElementById('profile-img-upload').files.length;
+               
+        for (let x = 0; x < ins; x++) {
+            form_data.append("files[]", document.getElementById('profile-img-upload').files[x]);
+        }
+        
+        $.ajax({
+            url: "https://" + document.domain + ":" + location.port + "/profile/profile-img-upload", // point to server-side URL
+            dataType: 'json', // what to expect back from server
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function (response) { // print success response
+                print(response.message)
+                update_profile_img();
+            },
+            error: function (response) {
+                print(response.message) // print error response
+            }
+        });
+    });
+
 
     let profile_img_p = document.createElement("p");
     profile_img_p.classList.add("profile-img-p");
@@ -132,8 +175,11 @@ async function load_profile_details(){
         let friend_div = document.createElement("div");
         friend_div.classList.add("friend-div");
         let friend_name = rooms[i]["friend"];
+        let profile_img_path = await get_profile_img_path(friend_name);
+        let s_index = profile_img_path.indexOf("profile-images");
+        profile_img_path = "../static/" + profile_img_path.substring(s_index);
         friend_div.innerHTML = `
-                                    <i class='bx bx-user'></i>
+                                    <img src=${profile_img_path} class="profile-icon">
                                     <p>${friend_name}</p>
                                 `;
         friends_container.appendChild(friend_div);
@@ -166,3 +212,6 @@ async function load_profile_details(){
 
 load_user_details();
 load_profile_details();
+
+
+    

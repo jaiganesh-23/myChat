@@ -94,7 +94,7 @@ body{
     font-size: 48px;
     border-radius: 50%;
     left: 70%;
-    top: -10%;
+    top: -85px;
     border: none;
 }
 
@@ -108,7 +108,7 @@ body{
 .profile-img-p{
     position: relative;
     /* left: 35%; */
-    top: -12%;
+    top: -110px;
     font-size: 21px;
     width: fit-content;
     margin: 0px auto;
@@ -239,6 +239,10 @@ body{
     margin: 10px auto;
 }
 
+.profile-icon{
+    width: 60px;
+    border-radius: 50%;
+}
 
 
 @media  screen and (max-width: 1700px){

@@ -2,13 +2,14 @@ from flask import Blueprint
 from flask import Flask, render_template, url_for, session, request, redirect, flash, jsonify
 from .user_database import user_Db
 from .message_database import message_Db
-
+from werkzeug.utils import secure_filename
+import os
 view = Blueprint("views", __name__)
 
 # GLOBAL CONSTANTS
 USER_NAME = 'name'
 MSG_LIMIT = 30
-
+UPLOAD_FOLDER = "./application/static/profile-images/"
 # VIEWS
 
 @view.route("/", methods=["GET", "POST"])
@@ -114,17 +115,6 @@ def friend_request(friend_name=None):
         user_db.register_friend(user_name, friend_name)
         return redirect(url_for("views.user"))
 
-@view.route("/update_profile_img/<file_name>")
-def update_profile_img(file_name=None):
-    if USER_NAME not in session:
-        flash("You are not logged in to update profile img")
-        return redirect(url_for("views.home"))
-
-    else:
-        user_name = session[USER_NAME]
-        user_db = user_Db()
-        user_db.update_profile_img(user_name, '/venv/application/static/profile-images/'+file_name)
-        return redirect(url_for("views.user"))
 
 @view.route("/get_user_details/<user_name>")
 def get_user_details(user_name):
@@ -158,6 +148,54 @@ def get_profile(user_name = None):
         else:
             flash("Profile for requested user does not exist.")
             return redirect(url_for("views.home"))
+        
+
+@view.route("/profile/profile-img-upload", methods=['POST'])
+def upload_file():
+    user_db = user_Db()
+    username = session[USER_NAME]
+
+
+    if 'files[]' not in request.files:
+        resp = jsonify({'message' : 'No file part in the request'})
+        resp.status_code = 400 
+        return resp
+    
+    files = request.files.getlist('files[]')
+
+    errors = {}
+    success = False
+
+    for file in files:
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(UPLOAD_FOLDER, filename)
+        user_db.update_profile_img(username, file_path)
+        file.save(file_path)
+        success = True
+
+    if success and errors:
+        errors['message'] = 'File(s) successfully uploaded'
+        resp = jsonify(errors)
+        resp.status_code = 206
+        return resp
+    if success:
+        resp = jsonify({'message' : 'Files successfully uploaded'})
+        resp.status_code = 201
+        return resp
+    else:
+        resp = jsonify(errors)
+        resp.status_code = 400
+        return resp
+    
+@view.route("/get_profile_img/<user_name>")
+def get_profile_img(user_name):
+    user_db = user_Db()
+    img_path = user_db.get_img_path(user_name)
+    return jsonify(img_path)
+
+
+
+    
 
 
 

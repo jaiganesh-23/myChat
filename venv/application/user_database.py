@@ -118,9 +118,32 @@ class user_Db:
     def update_profile_img(self, username, img_path):
         conn = sqlite3.connect(FILE)
         cursor = conn.cursor()
-        query = f"UPDATE {IMAGES_TABLE} SET img_path = ? where username = ?"
-        cursor.execute(query, (img_path, username))
-        conn.commit()
+
+        query = f"SELECT * FROM {IMAGES_TABLE} WHERE username = ?"
+        cursor.execute(query, (username,))
+        user = cursor.fetchone()
+        if(user):
+            query = f"UPDATE {IMAGES_TABLE} SET img_path = ? where username = ?"
+            cursor.execute(query, (img_path, username))
+            conn.commit()
+
+        else:
+            query = f"SELECT * FROM {USER_TABLE} WHERE username = ?"
+            cursor.execute(query, (username,))
+            user = cursor.fetchone()
+            print(user)
+            query = f"INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"
+            cursor.execute(query,(None, user[1], username, img_path))
+            conn.commit()
+
+    def get_img_path(self, username):
+        conn = sqlite3.connect(FILE)
+        cursor = conn.cursor()
+
+        query = f"SELECT * FROM {IMAGES_TABLE} WHERE username = ?"
+        cursor.execute(query, (username,))
+        user = cursor.fetchone()
+        return user[3]
 
 
 

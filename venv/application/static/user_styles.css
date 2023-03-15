@@ -227,6 +227,12 @@ body{
     width: 60%;
 }
 
+.profile-icon{
+    width: 60px;
+    border-radius: 50%;
+}
+
+
 @media  screen and (max-width: 1700px){
     .chat-room i{
         font-size: 60px;

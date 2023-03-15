@@ -11,11 +11,17 @@ async function add_message(msg, scroll) {
 
     content.classList.add("message");
     let m_p = document.createElement("p");
+    let profile_img_path = await get_profile_img_path(usr_name);
+    let s_index = profile_img_path.indexOf("profile-images");
+    profile_img_path = "../static/" + profile_img_path.substring(s_index);
     m_p.classList.add("msg");
-    m_p.innerHTML = `<span class="usr-name">${usr_name}</span>: ${message}`;
+    m_p.innerHTML = `
+                        <img src=${profile_img_path} class="profile-icon">    
+                        <span class="usr-name">${usr_name}</span>: ${message}
+    `;
     content.appendChild(m_p);
 
-    let m_span = m_p.childNodes[0];
+    let m_span = m_p.childNodes[3];
     m_span.addEventListener("mouseenter", (e) => {
         let c_span = e.target;
         let message_div = c_span.parentElement.parentElement;
@@ -84,6 +90,13 @@ async function get_messages(room_name) {
         .then(function (text) {
             return text;
         })
+}
+
+async function get_profile_img_path(username){
+    return await fetch("/get_profile_img/" + username)
+        .then(async function (response) {
+            return await response.json();
+        });
 }
 
 var username = load_name();
