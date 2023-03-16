@@ -1,4 +1,4 @@
-from flask import Flask, session
+from flask import Flask, session, jsonify
 from flask_socketio import SocketIO
 from application import create_app
 from application.user_database import user_Db
@@ -9,7 +9,7 @@ import os
 from OpenSSL import SSL, crypto
 import eventlet
 import subprocess
-
+from datetime import datetime
 
 
 # SETUP
@@ -25,6 +25,8 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
     data = dict(json)
     data['chat_room'] = data['chat_room'].lower()
+    json['datetime'] = f"{datetime.now()}"
+
     if "sender" in data:
         message_database = message_Db()
         message_database.save_message(data["sender"], data["content"], data["chat_room"])

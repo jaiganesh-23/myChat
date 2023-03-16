@@ -29,7 +29,7 @@ class user_Db:
     def _initialize_tables(self):
         query1 = f"""CREATE TABLE IF NOT EXISTS {USER_TABLE}
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT,
-                     email TEXT ,password TEXT, age INTEGER, gender TEXT )"""
+                     email TEXT ,password TEXT, age INTEGER, gender TEXT, datetime TEXT )"""
 
         query2 = f"""CREATE TABLE IF NOT EXISTS {ROOMS_TABLE}
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT,
@@ -40,24 +40,31 @@ class user_Db:
                     img_path TEXT)"""
         
         
+        d_query1 = f"""DROP TABLE IF EXISTS {USER_TABLE}"""
+        d_query2 = f"""DROP TABLE IF EXISTS {ROOMS_TABLE}"""
+        d_query3 = f"""DROP TABLE IF EXISTS {IMAGES_TABLE}"""
+        #self.cursor.execute(d_query1)
+        #self.cursor.execute(d_query2)
+        #self.cursor.execute(d_query3)
 
         self.cursor.execute(query1)
         self.cursor.execute(query2)
         self.cursor.execute(query3)
 
         query = f"Select * from {IMAGES_TABLE} where username = ?"
-        user = self.conn.execute(query, ("default_friend",))
+        self.cursor.execute(query, ("default_friend",))
+        user = self.cursor.fetchone()
         if(user == None):
             query4 = f"""INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"""
             self.cursor.execute(query4, (None, "default_friend", "default_friend", "./application/static/profile-images/male-icon.jpg"))
         self.conn.commit()
 
     def register_user(self, name, username, email, password, age, gender):
-        query1 = f"""INSERT INTO {USER_TABLE} VALUES (? ,?, ?, ?, ?, ?, ?)"""
+        query1 = f"""INSERT INTO {USER_TABLE} VALUES (? ,?, ?, ?, ?, ?, ?, ?)"""
 
         query2 = f"""INSERT INTO {ROOMS_TABLE} VALUES (?, ?, ?, ?, ?)"""
         query3 = f"""INSERT INTO {IMAGES_TABLE} VALUES (?, ?, ?, ?)"""
-        self.cursor.execute(query1, (None, name, username, email, password, age, gender))
+        self.cursor.execute(query1, (None, name, username, email, password, age, gender, datetime.now()))
         self.cursor.execute(query2, (None, name, username, "default_friend", "common_room"))
         self.cursor.execute(query3, (None, name, username, "./static/profile-images/male-icon.jpg"))
         self.conn.commit()
@@ -99,7 +106,7 @@ class user_Db:
         user = cursor.fetchone()
         print(user)
         user_dict = {"id" : user[0], "name": user[1], "username": user[2], "email": user[3], "password": user[4], "age": user[5],
-                    "gender": user[6]}
+                    "gender": user[6], "datetime": user[7]}
         #print(user)
         return user_dict
 
@@ -152,6 +159,8 @@ class user_Db:
         cursor.execute(query, (username,))
         user = cursor.fetchone()
         return user[3]
+    
+    
 
 
 

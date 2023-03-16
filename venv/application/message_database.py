@@ -23,7 +23,10 @@ class message_Db:
     def _create_table(self):
         query = f"""CREATE TABLE IF NOT EXISTS {MESSAGE_TABLE}
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, 
-                    content TEXT, chat_room TEXT ,time Date)"""
+                    content TEXT, chat_room TEXT , datetime TEXT)"""
+        d_query = f"""DROP TABLE IF EXISTS {MESSAGE_TABLE}"""
+
+        #self.conn.execute(d_query)
         self.conn.execute(query)
         self.conn.commit()
 
@@ -43,7 +46,7 @@ class message_Db:
         messages = cursor.fetchall()
         messages_list = []
         for msg in messages:
-            msg_dict = {"id":msg[0], "sender": msg[1], "content": msg[2], "chat_room": msg[3], "time": msg[4]}
+            msg_dict = {"id":msg[0], "sender": msg[1], "content": msg[2], "chat_room": msg[3], "datetime": msg[4]}
             messages_list.append(msg_dict)
 
         messages_list = messages_list[len(messages_list)-limit:]

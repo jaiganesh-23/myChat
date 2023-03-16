@@ -156,16 +156,20 @@ body{
     height: fit-content;
     width: fit-content;
     color: rgb(47,46,50);
+    background-color: rgb(234,234,235);
+    border-radius: 1rem;
+    padding: 10px 10px;
+    margin-top: 10px;
 }
 
 .msg{
-    background-color: rgb(234,234,235);
+    /* background-color: rgb(234,234,235); */
     font-size: 1rem;
     margin: 0;
     width: fit-content;
-    padding: 10px 10px;
-    margin-top: 10px;
-    border-radius: 1rem;
+    /* padding: 10px 10px; */
+    /* margin-top: 10px; */
+    /* border-radius: 1rem; */
 }
 
 .add-friend{
@@ -236,6 +240,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.date-time{
+    text-align: end;
+    font-size: 12px;
 }
 
 @media  screen and (max-width: 1700px){

@@ -3,6 +3,15 @@ async function add_message(msg, scroll) {
     var message = msg["content"];
     var chat_room = msg["chat_room"];
     var usr_name = msg["sender"];
+    let datetime = msg["datetime"];
+    let todays_date = new Date();
+    if(todays_date.getMonth() >= 9)
+        todays_date = `${todays_date.getFullYear()}-${todays_date.getMonth()+1}-${todays_date.getDate()}`;
+    else
+    todays_date = `${todays_date.getFullYear()}-0${todays_date.getMonth()+1}-${todays_date.getDate()}`;
+    let [date, time] = datetime.split(" ");
+    time = time.split(".");
+    console.log(todays_date, " ", date);
     var logged_usr_name = await load_name();
 
     var message_div = document.getElementById("messages");
@@ -19,7 +28,17 @@ async function add_message(msg, scroll) {
                         <img src=${profile_img_path} class="profile-icon">    
                         <span class="usr-name">${usr_name}</span>: ${message}
     `;
+
+    let d_p = document.createElement("p");
+    d_p.classList.add("date-time");
+    if(date == todays_date){
+        d_p.textContent = '- '+time[0];
+    }
+    else{
+        d_p.textContent = '- '+date;
+    }
     content.appendChild(m_p);
+    content.appendChild(d_p);
 
     let m_span = m_p.childNodes[3];
     m_span.addEventListener("mouseenter", async function(e){
@@ -44,7 +63,7 @@ async function add_message(msg, scroll) {
 
         add_friend_div.appendChild(profile_icon);
         add_friend_div.appendChild(add_m_p);
-        if(message_div.childNodes.length <2) {
+        if(message_div.childNodes.length <3) {
             message_div.prepend(add_friend_div);
         };
     })
@@ -147,6 +166,7 @@ async function load_chat(chat_room) {
     var message_div = document.getElementById("messages");
     message_div.innerHTML = ``;
     let messages = await get_messages(chat_room.toLowerCase());
+    console.log(messages);
     let scroll = false;
     console.log(messages);
     for (let i = 0; i < messages.length; i++) {
@@ -168,6 +188,8 @@ window.addEventListener("DOMContentLoaded", function(){
         //setTimeout(function(){}, 5000);
         var usr_name = await load_name();
         var room_name = document.getElementById("chat-room-header").textContent;
+        var datetime = new Date();
+        console.log(datetime);
         console.log(usr_name);
         if (usr_name != "") {
             socket.emit("receive_message", {
