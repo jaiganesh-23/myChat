@@ -1,11 +1,72 @@
-
 body{
-   background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    min-height: 700px;
+    background-color: rgb(33,23,32);
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: aquamarine;
+}
+
+a:hover{
+    color: black;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+    background-color: transparent!important;
+    margin-top: 25px;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 10%;
+    margin-left: 3%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .icon{
-    color: #f8b707;
+    color: rgb(20,185,127);
     font-size: 30px;
+}
+
+.login-link{
+    background-color: rgb(20,185,127);
+    border-radius: 2rem;
+    color: white;
+    width: 200px;
+}
+
+.nav-item{
+    text-align: center;
 }
 
 #messages-container{
@@ -27,7 +88,7 @@ body{
     margin-top: 3rem;
     width: 50%;
     min-height: 200px;
-    background-color: #FFFFFF;
+    background-color: rgb(19,80,81);
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 1em 1em 0 rgb(0 0 0 / 24%);
 }
 
@@ -52,11 +113,115 @@ body{
     margin-left: 15%;
 }
 
-@media only screen and (max-width: 770px){
+@media  screen and (max-width: 1700px){
+    .navbar-nav{
+        width: 100%;
+    }
+    .login-link{
+        width: 200px;
+    }
+    #messages-container{
+        top: 110px;
+        font-size: 2rem;
+    }
+}
+
+@media  screen and (max-width: 1350px){
+    .navbar-nav{
+        width: 100%;
+    }
+    .login-link{
+        width: 200px;
+    }
+    #messages-container{
+        top: 110px;
+        font-size: 2rem;
+    }
+}
+@media  screen and (max-width: 1000px){
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 16px;
+    }
+    .login-link{
+        width: 180px;
+    }
+    #messages-container{
+        top: 105px;
+        font-size: 2rem;
+    }
+}
+@media  screen and (max-width: 800px){
     .button-accessories>a{
         font-size:50%
     }
     .login-button{
         font-size: 50%;
+    }
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 160px;
+    }
+    #messages-container{
+        top: 115px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 600px){
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 140px;
+    }
+    #messages-container{
+        top: 120px;
+        font-size: 20px;
+    }
+}
+@media  screen and (max-width: 400px){
+    .navbar-nav{
+        width: 80%;
+        left: 10%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 120px;
+    }
+    #messages-container{
+        top: 95px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 0px){
+    .navbar-expand-sm {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-sm .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-sm .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-sm .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+    .navbar-nav{
+        width: 80%;
+        margin-left: 20%;
+        font-size: 14px;
+    }
+    .login-link{
+        width: 100px;
     }
 }

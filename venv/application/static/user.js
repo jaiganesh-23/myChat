@@ -22,24 +22,41 @@ async function add_message(msg, scroll) {
     content.appendChild(m_p);
 
     let m_span = m_p.childNodes[3];
-    m_span.addEventListener("mouseenter", (e) => {
+    m_span.addEventListener("mouseenter", async function(e){
         let c_span = e.target;
         let message_div = c_span.parentElement.parentElement;
         let c_usr_name = c_span.textContent;
 
+        let add_friend_div = document.createElement("div");
+        add_friend_div.classList.add("add-friend-div");
         
-        
+        let profile_icon = document.createElement("img");
+        let profile_img_path = await get_profile_img_path(usr_name);
+        let s_index = profile_img_path.indexOf("profile-images");
+        profile_img_path = "../static/" + profile_img_path.substring(s_index);
+        profile_icon.setAttribute("src", profile_img_path);
+        profile_icon.classList.add("profile-icon");
+
         let add_m_p = document.createElement("a");
         add_m_p.setAttribute("href", `/friend_request/${c_usr_name}`);
         add_m_p.classList.add("add-friend");
         add_m_p.innerHTML = `Add friend:${c_usr_name}`;
-        if(message_div.childNodes.length <2) message_div.prepend(add_m_p);
+
+        add_friend_div.appendChild(profile_icon);
+        add_friend_div.appendChild(add_m_p);
+        if(message_div.childNodes.length <2) {
+            message_div.prepend(add_friend_div);
+        };
     })
     content.addEventListener("mouseleave", (e)=>{
         let m_div = e.target;
 
         let p_div = m_div.childNodes[0];
-        if(p_div.classList.contains("add-friend")) p_div.remove();
+        let divx = m_div.childNodes;
+        console.log(divx);
+        if(p_div.classList.contains("add-friend-div")){ 
+            p_div.remove();
+        }
     })
 
     if(logged_usr_name != usr_name) content.classList.add("right");
