@@ -73,6 +73,7 @@ body{
     border-radius: 1rem;
     box-shadow: 0px 0px 20px 10px;
     min-height: 500px;
+    position: relative;
 }
 
 .name-top{
@@ -94,21 +95,29 @@ body{
     font-size: 48px;
     border-radius: 50%;
     left: 70%;
-    top: -85px;
+    top: -10%;
     border: none;
 }
 
 #profile-img-upload{
+    visibility: hidden;
+}
+
+#profile-upload-btn{
     display: block;
-    font-size: 25px;
-    width: 67%;
-    margin: 0 auto;
+    position: relative;
+    margin: -40px auto;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 2rem;
+    /* left: 60%; */
+    /* transform: translateX(-100%); */
 }
 
 .profile-img-p{
     position: relative;
     /* left: 35%; */
-    top: -110px;
+    top: -58px;
     font-size: 21px;
     width: fit-content;
     margin: 0px auto;
@@ -181,15 +190,30 @@ body{
     box-shadow: 0px 0px 20px 10px;
     border-radius: 1rem;
     min-height: 500px;
+    position: relative;
 }
 
 .profile-user-name{
-    color: rgb(249,232,212);
+    color: rgb(142,80,23);
     font-size: 40px;
     margin-top: 12px;
     margin-left: 20px;
 }
 
+.add-friend{
+    color: rgb(249 232 212);
+    display: block;
+    width: fit-content;
+    background-color: rgb(142,80,23);
+    padding: 15px 15px;
+    position: relative;
+    left: 90%;
+    transform: translateX(-100%);
+    top: -71px;
+    border-radius: 2rem;
+    text-decoration: none;
+    box-shadow: 0px 0px 5px 0px;
+}
 
 .profile-name{
     color: rgb(236, 226, 214);
@@ -249,6 +273,7 @@ body{
 }
 
 
+
 @media  screen and (max-width: 1700px){
     .name-top{
         font-size: 40px;
@@ -288,6 +313,9 @@ body{
     }
     .login-link{
         width: 200px;
+    }
+    #img-upload-btn{
+        font-size: 48px;
     }
     #messages-container{
         top: 110px;
@@ -335,6 +363,9 @@ body{
     .login-link{
         width: 200px;
     }
+    #img-upload-btn{
+        font-size: 46px;
+    }
     #messages-container{
         top: 110px;
         font-size: 2rem;
@@ -373,6 +404,9 @@ body{
     }
     .email{
         font-size: 33px;
+    }
+    #img-upload-btn{
+        font-size: 40px;
     }
     .navbar-nav{
         width: 80%;
@@ -421,6 +455,9 @@ body{
     .email{
         font-size: 31px;
     }
+    #img-upload-btn{
+        font-size: 36px;
+    }
     .navbar-nav{
         width: 80%;
         left: 10%;
@@ -464,6 +501,9 @@ body{
     }
     .friends-header{
         font-size: 30px;
+    }
+    #img-upload-btn{
+        font-size: 34px;
     }
     .email{
         font-size: 29px;
@@ -514,6 +554,9 @@ body{
     }
     .email{
         font-size: 27px;
+    }
+    #img-upload-btn{
+        font-size: 32px;
     }
     .navbar-nav{
         width: 80%;

@@ -43,6 +43,7 @@ async function load_user_details(){
     name_top.textContent = user_name;
     name_top.classList.add("name-top");
 
+
     let profile_img = document.createElement("img")
     let profile_img_path = await get_profile_img_path(user_name);
     let s_index = profile_img_path.indexOf("profile-images");
@@ -53,8 +54,14 @@ async function load_user_details(){
     let profile_img_upload = document.createElement("input");
     profile_img_upload.setAttribute("id", "profile-img-upload");
     profile_img_upload.setAttribute("type", "file");
-    profile_img_upload.setAttribute("multiple", "file");
     profile_img_upload.setAttribute("name", "upload");
+
+    let profile_upload_button = document.createElement("button");
+    profile_upload_button.setAttribute("id", "profile-upload-btn");
+    profile_upload_button.textContent = "Browse image";
+    profile_upload_button.addEventListener("click", function(){
+        profile_img_upload.click();
+    })
 
     let profile_img_button = document.createElement("button");
     profile_img_button.setAttribute("id", "img-upload-btn");
@@ -125,8 +132,9 @@ async function load_user_details(){
     profile_section.appendChild(name_top);
     profile_section.appendChild(profile_img);
     profile_section.appendChild(profile_img_button);
-    profile_section.appendChild(profile_img_upload);
     profile_section.appendChild(profile_img_p);
+    profile_section.appendChild(profile_upload_button);
+    profile_section.appendChild(profile_img_upload);
     profile_section.appendChild(name_p);
     profile_section.appendChild(user_name_p);
     profile_section.appendChild(email_p);
@@ -158,6 +166,11 @@ async function load_profile_details(){
     let profile_user_name = document.createElement("p");
     profile_user_name.textContent = user_name;
     profile_user_name.classList.add("profile-user-name");
+
+    let add_friend = document.createElement("a");
+    add_friend.setAttribute("href", `/friend_request/${user_name}`)
+    add_friend.textContent = "Add Friend";
+    add_friend.classList.add("add-friend");
 
     let profile_name = document.createElement("p");
     profile_name.textContent = name;
@@ -202,6 +215,7 @@ async function load_profile_details(){
     let profile_container = document.querySelector(".user-details");
 
     profile_container.appendChild(profile_user_name);
+    profile_container.appendChild(add_friend);
     profile_container.appendChild(profile_name);
     profile_container.appendChild(bio_header);
     profile_container.appendChild(header_hr2);

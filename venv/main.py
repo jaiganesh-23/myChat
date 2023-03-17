@@ -15,7 +15,7 @@ from datetime import datetime
 # SETUP
 app = create_app()
 socketio = SocketIO(app)
-app.secret_key = "secret key"
+
 
 # Communication Functions
 
