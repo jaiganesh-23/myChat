@@ -24,9 +24,14 @@ def home(logged_user=None):
         gender = request.form["gender"]
         age = request.form["age"]
         user_db = user_Db()
-        user_db.register_user(name, username, email, password, age, gender)
-        flash(f"{username} registered successfully")
-        return redirect(url_for("views.login"))
+        found_user = user_db.get_user(username)
+        if(found_user):
+            flash(f"User {username} already exists.")
+            return render_template("home.html", **{"session": session, "user":logged_user})
+        else:
+            user_db.register_user(name, username, email, password, age, gender)
+            flash(f"{username} registered successfully")
+            return redirect(url_for("views.login"))
 
     return render_template("home.html", **{"session": session, "user":logged_user})
 
