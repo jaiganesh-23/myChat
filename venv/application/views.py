@@ -24,7 +24,7 @@ def home(logged_user=None):
         gender = request.form["gender"]
         age = request.form["age"]
         user_db = user_Db()
-        found_user = user_db.get_user(username)
+        found_user = user_db.check_user(username)
         if(found_user):
             flash(f"User {username} already exists.")
             return render_template("home.html", **{"session": session, "user":logged_user})

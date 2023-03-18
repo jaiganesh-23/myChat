@@ -85,7 +85,7 @@ class user_Db:
         cursor = conn.cursor()
         query = f"""INSERT INTO {ROOMS_TABLE} VALUES(?, ?, ?, ?, ?)"""
 
-        chat_room = "room " + username + "_" + friend
+        chat_room = "room_" + username + "_" + friend
         query2 = f"""SELECT * FROM {ROOMS_TABLE} where username = ?"""
         cursor.execute(query2,(username,))
         user_info = cursor.fetchone()

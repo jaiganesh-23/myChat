@@ -144,25 +144,38 @@ async function add_chat_rooms() {
     for (let i = 0; i < rooms.length; i++) {
         let room = rooms[i];
         var room_name = i==0? room["chat_room"]: room["friend"];
+        let load_name = room["chat_room"];
         var freind_name = room["friend"];
         room_name = room_name.toUpperCase();
         let profile_img_path = await get_profile_img_path(freind_name);
         let s_index = profile_img_path.indexOf("profile-images");
         profile_img_path = "../static/" + profile_img_path.substring(s_index);
-        var room_div = `<div class = "chat-room" onclick = "loadRoom(this)">
-                            <img src = ${profile_img_path} class="profile-icon">
-                            <h4>${room_name}</h4>
-                        </div>
-                        <hr>`;
-        rooms_container.innerHTML += room_div;
+
+        let room_div = document.createElement("div");
+        let room_div_image = document.createElement("img");
+        let room_div_h4 = document.createElement("h4");
+        let room_div_hr = document.createElement("hr");
+
+        room_div.classList.add("chat-room")
+        room_div_image.setAttribute("src", profile_img_path);
+        room_div_image.classList.add("profile-icon")
+        room_div_h4.textContent = room_name
+        
+        room_div.appendChild(room_div_image);
+        room_div.appendChild(room_div_h4);
+        room_div.addEventListener("click", async function(e){
+            load_chat(load_name, room_name);
+        });
+        rooms_container.appendChild(room_div);
+        rooms_container.appendChild(room_div_hr);
     }
-    load_chat(rooms[0]["chat_room"]);
+    load_chat(rooms[0]["chat_room"], rooms[0]["chat_room"]);
 }
 
-async function load_chat(chat_room) {
+async function load_chat(chat_room, room_name) {
     var chat_container = document.getElementById("chat-container");
     var chat_room_header = document.getElementById("chat-room-header");
-    chat_room_header.textContent = chat_room.toUpperCase();
+    chat_room_header.textContent = room_name.toUpperCase();
     var message_div = document.getElementById("messages");
     message_div.innerHTML = ``;
     let messages = await get_messages(chat_room.toLowerCase());
