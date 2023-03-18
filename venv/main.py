@@ -9,30 +9,54 @@ import os
 from OpenSSL import SSL, crypto
 import eventlet
 import subprocess
+import openai
 from datetime import datetime
 
 
 # SETUP
 app = create_app()
 socketio = SocketIO(app)
-
+openai.api_key = ""
 
 # Communication Functions
 
 
 @socketio.on('receive_message')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
-
+    global messages
     data = dict(json)
     data['chat_room'] = data['chat_room'].lower()
     json['datetime'] = f"{datetime.now()}"
 
-    if "sender" in data:
+    if "bot" in data:
+        message_database = message_Db()
+        c_message = data["content"][5:]
+        message_database.save_message(data["sender"], data["content"], data["chat_room"])
+        c_message_dict = {"role": "user", "content": c_message}
+        messages.append(c_message_dict)
+        completion = openai.ChatCompletion.create(
+            model = "gpt-3.5-turbo",
+            messages = messages
+        )
+
+        c_reply = completion.choices[0].message["content"]
+        message_database.save_message("openai_bot", c_reply, data["chat_room"])
+        c_reply_dict = {"role": "assistant", "content": c_reply}
+        messages.append(c_reply_dict)
+        
+        socketio.emit('message response', json)
+        json2 = json
+        json2["content"] = c_reply
+        json2["sender"] = "openai_bot"
+        socketio.emit("message response", json2)
+
+    else:
         message_database = message_Db()
         message_database.save_message(data["sender"], data["content"], data["chat_room"])
         print(json)
+        socketio.emit('message response', json)
 
-    socketio.emit('message response', json)
+    
 
 # MAINLINE
 
@@ -68,6 +92,8 @@ KEY_FILE = "key.pem"
 
 
 if __name__ == "__main__":
+    messages = []
+
     create_self_signed_cert(CERT_FILE, KEY_FILE,
                             certargs=
                             {"Country": "AA",

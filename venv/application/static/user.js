@@ -216,13 +216,25 @@ window.addEventListener("DOMContentLoaded", function(){
             console.log(user_input);
             //clear msg box value
             msg_input.value = "";
+
+            user_input_list = user_input.split(" ");
     
             //send message to other users
-            socket.emit("receive_message", {
-                content: user_input,
-                chat_room: room_name,
-                sender: user_name,
-            });
+            if(user_input_list[0] == "/bot"){
+                socket.emit("receive_message", {
+                    content: user_input,
+                    chat_room: room_name,
+                    sender: user_name,
+                    bot: true,
+                });
+            }
+            else{
+                socket.emit("receive_message", {
+                    content: user_input,
+                    chat_room: room_name,
+                    sender: user_name,
+                });
+            }
         });
     });
     socket.on("disconnect", async function () {

@@ -57,6 +57,17 @@ class user_Db:
         if(user == None):
             query4 = f"""INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"""
             self.cursor.execute(query4, (None, "default_friend", "default_friend", "./application/static/profile-images/male-icon.jpg"))
+
+        query = f"Delete from {IMAGES_TABLE} where username = ?"
+        self.cursor.execute(query, ("openai_bot",))
+        self.conn.commit()
+
+        query = f"Select * from {IMAGES_TABLE} where username = ?"
+        self.cursor.execute(query, ("openai_bot",))
+        user = self.cursor.fetchone()
+        if(user == None):
+            query4 = f"""INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"""
+            self.cursor.execute(query4, (None, "openai_bot", "openai_bot", "./application/static/profile-images/bot-logo.png"))
         self.conn.commit()
 
     def register_user(self, name, username, email, password, age, gender):
