@@ -16,7 +16,7 @@ from datetime import datetime
 # SETUP
 app = create_app()
 socketio = SocketIO(app)
-openai.api_key = ""
+openai.api_key = os.getenv('OPEN_AI_KEY')
 
 # Communication Functions
 
