@@ -68,7 +68,7 @@ async function load_user_details(){
     profile_img_button.innerHTML = "<i class='bx bxs-plus-circle upload-icon'></i>";
 
     profile_img_button.addEventListener('click', function () {
-        console.log("clicked");
+        //console.log("clicked");
         let form_data = new FormData();
         let ins = document.getElementById('profile-img-upload').files.length;
                

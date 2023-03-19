@@ -11,7 +11,7 @@ async function add_message(msg, scroll) {
     todays_date = `${todays_date.getFullYear()}-0${todays_date.getMonth()+1}-${todays_date.getDate()}`;
     let [date, time] = datetime.split(" ");
     time = time.split(".");
-    console.log(todays_date, " ", date);
+    //console.log(todays_date, " ", date);
     var logged_usr_name = await load_name();
 
     var message_div = document.getElementById("messages");
@@ -179,9 +179,9 @@ async function load_chat(chat_room, room_name) {
     var message_div = document.getElementById("messages");
     message_div.innerHTML = ``;
     let messages = await get_messages(chat_room.toLowerCase());
-    console.log(messages);
+    //console.log(messages);
     let scroll = false;
-    console.log(messages);
+    //console.log(messages);
     for (let i = 0; i < messages.length; i++) {
         msg = messages[i];
         if (i == messages.length - 1) {
@@ -202,8 +202,8 @@ window.addEventListener("DOMContentLoaded", function(){
         var usr_name = await load_name();
         var room_name = document.getElementById("chat-room-header").textContent;
         var datetime = new Date();
-        console.log(datetime);
-        console.log(usr_name);
+        //console.log(datetime);
+        //console.log(usr_name);
         if (usr_name != "") {
             socket.emit("receive_message", {
                 content: usr_name + " just connected to the server!",
@@ -226,7 +226,7 @@ window.addEventListener("DOMContentLoaded", function(){
             let user_input = msg_input.value;
             let user_name = await load_name();
             let room_name = document.getElementById("chat-room-header").textContent;
-            console.log(user_input);
+            //console.log(user_input);
             //clear msg box value
             msg_input.value = "";
 
@@ -260,7 +260,7 @@ window.addEventListener("DOMContentLoaded", function(){
         });
     });
     socket.on("message response", function (msg) {
-        console.log(msg);
+        //console.log(msg);
         add_message(msg, true);
     })
 })
