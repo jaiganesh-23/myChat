@@ -195,7 +195,7 @@ add_chat_rooms();
 
 var socket;
 window.addEventListener("DOMContentLoaded", function(){
-    socket = io.connect("http://" + document.domain + ":" + location.port);
+    socket = io.connect("https://" + document.domain + ":" + location.port);
 
     socket.on("connect", async function () {
         //setTimeout(function(){}, 5000);
