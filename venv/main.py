@@ -15,7 +15,7 @@ from datetime import datetime
 
 # SETUP
 app = create_app()
-socketio = SocketIO(app, allow_upgrades=False, ping_timeout=180, async_mode='gevent')
+socketio = SocketIO(app, logger=True, engineio_logger=True)
 openai.api_key = ""
 
 # Communication Functions
@@ -93,7 +93,6 @@ KEY_FILE = "key.pem"
 
 if __name__ == "__main__":
     messages = []
-
     create_self_signed_cert(CERT_FILE, KEY_FILE,
                             certargs=
                             {"Country": "AA",
@@ -102,7 +101,7 @@ if __name__ == "__main__":
                              "Organization": "ABCD",
                              "Org. Unit": "ABCD"})
     #nginx_result = os.system("start ./nginx.exe")
-    socketio.run(app, debug=True, host='127.0.0.1', port=5000, keyfile=KEY_FILE, certfile=CERT_FILE)
+    socketio.run(app, debug=True, host='127.0.0.1', port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
 
