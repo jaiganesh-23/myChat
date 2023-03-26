@@ -1,5 +1,5 @@
-from gevent import monkey
-monkey.patch_all()
+import eventlet
+eventlet.monkey_patch()
 from flask import Flask, session, jsonify
 from flask_socketio import SocketIO
 from application import create_app
@@ -9,7 +9,6 @@ from waitress import serve
 import time
 import os
 from OpenSSL import SSL, crypto
-import eventlet
 import subprocess
 import openai
 from datetime import datetime
@@ -17,7 +16,7 @@ from datetime import datetime
 
 # SETUP
 app = create_app()
-socketio = SocketIO(app, logger=True, engineio_logger=True, async_mode='gevent')
+socketio = SocketIO(app, logger=True, engineio_logger=True)
 openai.api_key = ""
 
 # Communication Functions
