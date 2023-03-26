@@ -15,8 +15,8 @@ from datetime import datetime
 
 # SETUP
 app = create_app()
-socketio = SocketIO(app)
-openai.api_key = "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"
+socketio = SocketIO(app, allow_upgrades=False)
+openai.api_key = ""
 
 # Communication Functions
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
                              "City": "ABCD",
                              "Organization": "ABCD",
                              "Org. Unit": "ABCD"})
-    nginx_result = os.system("start ./nginx.exe")
+    #nginx_result = os.system("start ./nginx.exe")
     socketio.run(app, debug=True, host='127.0.0.1', keyfile=KEY_FILE, certfile=CERT_FILE, port=5000)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
