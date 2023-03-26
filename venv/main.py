@@ -15,7 +15,7 @@ from datetime import datetime
 
 # SETUP
 app = create_app()
-socketio = SocketIO(app, allow_upgrades=False, ping_timeout=180, async_mode='gevent')
+socketio = SocketIO(app, allow_upgrades=False, ping_timeout=180)
 openai.api_key = ""
 
 # Communication Functions
