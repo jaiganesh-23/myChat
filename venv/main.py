@@ -1,5 +1,5 @@
-import eventlet
-eventlet.monkey_patch()
+from gevent import monkey
+monkey.patch_all()
 from flask import Flask, session, jsonify
 from flask_socketio import SocketIO
 from application import create_app
@@ -16,7 +16,7 @@ from datetime import datetime
 
 # SETUP
 app = create_app()
-socketio = SocketIO(app, logger=True, engineio_logger=True)
+socketio = SocketIO(app, logger=True, engineio_logger=True, async_mode = 'gevent')
 openai.api_key = ""
 
 # Communication Functions
