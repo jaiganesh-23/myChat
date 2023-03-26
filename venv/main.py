@@ -102,7 +102,7 @@ if __name__ == "__main__":
                              "Organization": "ABCD",
                              "Org. Unit": "ABCD"})
     #nginx_result = os.system("start ./nginx.exe")
-    socketio.run(app, debug=True, host='127.0.0.1', port=5000)
+    socketio.run(app, debug=True, host='127.0.0.1', port=5000, keyfile=KEY_FILE, certfile=CERT_FILE)
     #serve(app, host='127.0.0.1', port=5000, url_scheme="https")
 
 
