@@ -259,6 +259,19 @@ body{
     border: none;
 }
 
+.selected-files{
+    position: relative;
+    left: 60%;
+    background-color: rgb(234,234,235);
+    color: black;
+    border-radius: 1rem;
+    width: fit-content;
+}
+
+.selected-files p{
+    margin: 10px 10px;
+}
+
 @media  screen and (max-width: 1700px){
     .chat-room i{
         font-size: 60px;

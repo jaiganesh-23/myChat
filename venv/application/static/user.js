@@ -201,16 +201,19 @@ file_button.addEventListener("click", function(e) {
 chat_file_upload.addEventListener("change", function(e) {
     e.preventDefault();
     let message_input_div = document.querySelector(".message-input");
+    let new_div = document.createElement("div");
     let p1 = document.createElement("p");
     p1.textContent = "Selected Files: ";
     let ins = document.getElementById('chat-file').files.length;
-    message_input_div.appendChild(p1);
+    new_div.appendChild(p1);
+    new_div.classList.add("selected-files");
     
     for(let x=0;x<ins;x++){
         let new_p = document.createElement("p");
         new_p.textContent = document.getElementById('chat-file').files[x].name;
-        message_input_div.appendChild(new_p);
+        new_div.appendChild(new_p);
     }
+    message_input_div.appendChild(new_div);
 })
 
 var socket = io.connect('/', { transports: ['websocket'] });
@@ -282,6 +285,9 @@ socket.on("connect", async function () {
 
             }
         });
+
+        let selected_files = document.querySelector(".selected-files");
+        selected_files.remove();
     });
 });
 
