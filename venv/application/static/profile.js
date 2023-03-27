@@ -56,48 +56,39 @@ async function load_user_details(){
     profile_img_upload.setAttribute("type", "file");
     profile_img_upload.setAttribute("name", "upload");
 
-    let profile_upload_button = document.createElement("button");
-    profile_upload_button.setAttribute("id", "profile-upload-btn");
-    profile_upload_button.textContent = "Browse image";
-    profile_upload_button.addEventListener("click", function(){
-        profile_img_upload.click();
-    })
-
     let profile_img_button = document.createElement("button");
     profile_img_button.setAttribute("id", "img-upload-btn");
     profile_img_button.innerHTML = "<i class='bx bxs-plus-circle upload-icon'></i>";
 
-    profile_img_button.addEventListener('click', function () {
-        //console.log("clicked");
+    profile_img_button.addEventListener('click', function(e) {
+        e.preventDefault();
+        profile_img_upload.click();
+    })
+
+    profile_img_upload.addEventListener('change', function (e) {
+        e.preventDefault();
         let form_data = new FormData();
         let ins = document.getElementById('profile-img-upload').files.length;
                
-        for (let x = 0; x < ins; x++) {
-            form_data.append("files[]", document.getElementById('profile-img-upload').files[x]);
-        }
+        let x = ins-1;
+        if(x>=0) form_data.append("files[]", document.getElementById('profile-img-upload').files[x]);
+        
         
         $.ajax({
-            url: "https://" + document.domain + ":" + location.port + "/profile/profile-img-upload", // point to server-side URL
+            url: "http://" + document.domain + ":" + location.port + "/profile/profile-img-upload", // point to server-side URL
             dataType: 'json', // what to expect back from server
             cache: false,
             contentType: false,
             processData: false,
             data: form_data,
             type: 'post',
-            success: function (response) { // print success response
-                print(response.message)
+            success: function (response) { 
                 update_profile_img();
             },
             error: function (response) {
-                print(response.message) // print error response
             }
         });
     });
-
-
-    let profile_img_p = document.createElement("p");
-    profile_img_p.classList.add("profile-img-p");
-    profile_img_p.textContent = "Choose and Upload Image";
 
     let user_name_p = document.createElement("p");
     user_name_p.textContent = user_name;
@@ -132,8 +123,6 @@ async function load_user_details(){
     profile_section.appendChild(name_top);
     profile_section.appendChild(profile_img);
     profile_section.appendChild(profile_img_button);
-    profile_section.appendChild(profile_img_p);
-    profile_section.appendChild(profile_upload_button);
     profile_section.appendChild(profile_img_upload);
     profile_section.appendChild(name_p);
     profile_section.appendChild(user_name_p);

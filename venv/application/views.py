@@ -10,6 +10,7 @@ view = Blueprint("views", __name__)
 USER_NAME = 'name'
 MSG_LIMIT = 30
 UPLOAD_FOLDER = "./application/static/profile-images/"
+UPLOAD_FOLDER2 = './application/static/chat-files/'
 # VIEWS
 
 @view.route("/", methods=["GET", "POST"])
@@ -198,7 +199,40 @@ def get_profile_img(user_name):
     img_path = user_db.get_img_path(user_name)
     return jsonify(img_path)
 
+@view.route("/user/chat-file-upload", methods=['POST'])
+def chat_file_upload():
+    username = session[USER_NAME]
 
+
+    if 'files[]' not in request.files:
+        resp = jsonify({'message' : 'No file part in the request'})
+        resp.status_code = 400 
+        return resp
+    
+    files = request.files.getlist('files[]')
+
+    errors = {}
+    success = False
+
+    for file in files:
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(UPLOAD_FOLDER2, filename)
+        file.save(file_path)
+        success = True
+
+    if success and errors:
+        errors['message'] = 'File(s) successfully uploaded'
+        resp = jsonify(errors)
+        resp.status_code = 206
+        return resp
+    if success:
+        resp = jsonify({'message' : 'Files successfully uploaded'})
+        resp.status_code = 201
+        return resp
+    else:
+        resp = jsonify(errors)
+        resp.status_code = 400
+        return resp
 
     
 

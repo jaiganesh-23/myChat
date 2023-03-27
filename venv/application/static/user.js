@@ -5,13 +5,12 @@ async function add_message(msg, scroll) {
     var usr_name = msg["sender"];
     let datetime = msg["datetime"];
     let todays_date = new Date();
-    if(todays_date.getMonth() >= 9)
-        todays_date = `${todays_date.getFullYear()}-${todays_date.getMonth()+1}-${todays_date.getDate()}`;
+    if (todays_date.getMonth() >= 9)
+        todays_date = `${todays_date.getFullYear()}-${todays_date.getMonth() + 1}-${todays_date.getDate()}`;
     else
-    todays_date = `${todays_date.getFullYear()}-0${todays_date.getMonth()+1}-${todays_date.getDate()}`;
+        todays_date = `${todays_date.getFullYear()}-0${todays_date.getMonth() + 1}-${todays_date.getDate()}`;
     let [date, time] = datetime.split(" ");
     time = time.split(".");
-    //console.log(todays_date, " ", date);
     var logged_usr_name = await load_name();
 
     var message_div = document.getElementById("messages");
@@ -31,24 +30,24 @@ async function add_message(msg, scroll) {
 
     let d_p = document.createElement("p");
     d_p.classList.add("date-time");
-    if(date == todays_date){
-        d_p.textContent = '- '+time[0];
+    if (date == todays_date) {
+        d_p.textContent = '- ' + time[0];
     }
-    else{
-        d_p.textContent = '- '+date;
+    else {
+        d_p.textContent = '- ' + date;
     }
     content.appendChild(m_p);
     content.appendChild(d_p);
 
     let m_span = m_p.childNodes[3];
-    m_span.addEventListener("mouseenter", async function(e){
+    m_span.addEventListener("mouseenter", async function (e) {
         let c_span = e.target;
         let message_div = c_span.parentElement.parentElement;
         let c_usr_name = c_span.textContent;
 
         let add_friend_div = document.createElement("div");
         add_friend_div.classList.add("add-friend-div");
-        
+
         let profile_icon = document.createElement("img");
         let profile_img_path = await get_profile_img_path(usr_name);
         let s_index = profile_img_path.indexOf("profile-images");
@@ -63,22 +62,22 @@ async function add_message(msg, scroll) {
 
         add_friend_div.appendChild(profile_icon);
         add_friend_div.appendChild(add_m_p);
-        if(message_div.childNodes.length <3) {
+        if (message_div.childNodes.length < 3) {
             message_div.prepend(add_friend_div);
         };
     })
-    content.addEventListener("mouseleave", (e)=>{
+    content.addEventListener("mouseleave", (e) => {
         let m_div = e.target;
 
         let p_div = m_div.childNodes[0];
         let divx = m_div.childNodes;
         console.log(divx);
-        if(p_div.classList.contains("add-friend-div")){ 
+        if (p_div.classList.contains("add-friend-div")) {
             p_div.remove();
         }
     })
 
-    if(logged_usr_name != usr_name) content.classList.add("right");
+    if (logged_usr_name != usr_name) content.classList.add("right");
     message_div.appendChild(content);
 
     if (scroll) {
@@ -128,7 +127,7 @@ async function get_messages(room_name) {
         })
 }
 
-async function get_profile_img_path(username){
+async function get_profile_img_path(username) {
     return await fetch("/get_profile_img/" + username)
         .then(async function (response) {
             return await response.json();
@@ -143,7 +142,7 @@ async function add_chat_rooms() {
     console.log(rooms);
     for (let i = 0; i < rooms.length; i++) {
         let room = rooms[i];
-        var room_name = i==0? room["chat_room"]: room["friend"];
+        var room_name = i == 0 ? room["chat_room"] : room["friend"];
         let load_name = room["chat_room"];
         var freind_name = room["friend"];
         room_name = room_name.toUpperCase();
@@ -160,10 +159,10 @@ async function add_chat_rooms() {
         room_div_image.setAttribute("src", profile_img_path);
         room_div_image.classList.add("profile-icon")
         room_div_h4.textContent = room_name
-        
+
         room_div.appendChild(room_div_image);
         room_div.appendChild(room_div_h4);
-        room_div.addEventListener("click", async function(e){
+        room_div.addEventListener("click", async function (e) {
             load_chat(load_name, room_name);
         });
         rooms_container.appendChild(room_div);
@@ -179,9 +178,7 @@ async function load_chat(chat_room, room_name) {
     var message_div = document.getElementById("messages");
     message_div.innerHTML = ``;
     let messages = await get_messages(chat_room.toLowerCase());
-    //console.log(messages);
     let scroll = false;
-    //console.log(messages);
     for (let i = 0; i < messages.length; i++) {
         msg = messages[i];
         if (i == messages.length - 1) {
@@ -193,77 +190,115 @@ async function load_chat(chat_room, room_name) {
 
 add_chat_rooms();
 
+let chat_file_upload = document.querySelector("#chat-file");
+let file_button = document.querySelector("#file-upload");
 
-window.addEventListener("DOMContentLoaded", function(){
-    var socket = io.connect('/', {transports:['websocket']});
+file_button.addEventListener("click", function(e) {
+    e.preventDefault();
+    chat_file_upload.click();
+})
 
-    socket.on("connect", async function () {
-        //setTimeout(function(){}, 5000);
-        var usr_name = await load_name();
-        var room_name = document.getElementById("chat-room-header").textContent;
-        var datetime = new Date();
-        //console.log(datetime);
-        //console.log(usr_name);
-        if (usr_name != "") {
+chat_file_upload.addEventListener("change", function(e) {
+    e.preventDefault();
+    let message_input_div = document.querySelector(".message-input");
+    let p1 = document.createElement("p");
+    p1.textContent = "Selected Files: ";
+    let ins = document.getElementById('chat-file').files.length;
+    message_input_div.appendChild(p1);
+    
+    for(let x=0;x<ins;x++){
+        let new_p = document.createElement("p");
+        new_p.textContent = document.getElementById('chat-file').files[x].name;
+        message_input_div.appendChild(new_p);
+    }
+})
+
+var socket = io.connect('/', { transports: ['websocket'] });
+socket.on("connect", async function () {
+    var usr_name = await load_name();
+    var room_name = document.getElementById("chat-room-header").textContent;
+    var datetime = new Date();
+    if (usr_name != "") {
+        socket.emit("receive_message", {
+            content: usr_name + " just connected to the server!",
+            chat_room: room_name,
+            sender: usr_name,
+            connect: true,
+        });
+        socket.emit("receive_message", {
+            content: "<----- Welcome to the server " + usr_name + " ----->",
+            chat_room: room_name,
+            sender: usr_name,
+            connect: true,
+        });
+    }
+    var send_message = $("button#send").on("click", async function (e) {
+        e.preventDefault();
+
+
+        let msg_input = document.getElementById("msg");
+        let user_input = msg_input.value;
+        let user_name = await load_name();
+        let room_name = document.getElementById("chat-room-header").textContent;
+
+        msg_input.value = "";
+
+        user_input_list = user_input.split(" ");
+
+        if (user_input_list[0] == "/bot") {
             socket.emit("receive_message", {
-                content: usr_name + " just connected to the server!",
+                content: user_input,
                 chat_room: room_name,
-                sender: usr_name,
-                connect: true,
-            });
-            socket.emit("receive_message", {
-                content: "<----- Welcome to the server " + usr_name + " ----->",
-                chat_room: room_name,
-                sender: usr_name,
-                connect: true,
+                sender: user_name,
+                bot: true,
             });
         }
-        var send_message = $("button#send").on("click", async function (e) {
-            e.preventDefault();
-    
-            //get input from message box
-            let msg_input = document.getElementById("msg");
-            let user_input = msg_input.value;
-            let user_name = await load_name();
-            let room_name = document.getElementById("chat-room-header").textContent;
-            //console.log(user_input);
-            //clear msg box value
-            msg_input.value = "";
+        else {
+            socket.emit("receive_message", {
+                content: user_input,
+                chat_room: room_name,
+                sender: user_name,
+            });
+        }
 
-            user_input_list = user_input.split(" ");
-    
-            //send message to other users
-            if(user_input_list[0] == "/bot"){
-                socket.emit("receive_message", {
-                    content: user_input,
-                    chat_room: room_name,
-                    sender: user_name,
-                    bot: true,
-                });
-            }
-            else{
-                socket.emit("receive_message", {
-                    content: user_input,
-                    chat_room: room_name,
-                    sender: user_name,
-                });
+        let form_data = new FormData();
+        let ins = document.getElementById('chat-file').files.length;
+
+        for(let x=0;x<ins;x++){
+            form_data.append("files[]", document.getElementById('chat-file').files[x]);
+        }
+        $.ajax({
+            url: "http://" + document.domain + ":" + location.port + "/user/chat-file-upload", // point to server-side URL
+            dataType: 'json', // what to expect back from server
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function (response) { 
+
+            },
+            error: function (response) {
+
             }
         });
     });
-    socket.on("disconnect", async function () {
-        var user_name = await load_name();
-        var room_name = document.getElementById("chat-room-header").textContent;
-        socket.emit("receive_message", {
-            content: user_name + " just left the server...",
-            chat_room: room_name,
-            sender: user_name,
-        });
+});
+
+socket.on("disconnect", async function () {
+    var user_name = await load_name();
+    var room_name = document.getElementById("chat-room-header").textContent;
+    socket.emit("receive_message", {
+        content: user_name + " just left the server...",
+        chat_room: room_name,
+        sender: user_name,
     });
-    socket.on("message response", function (msg) {
-        //console.log(msg);
-        add_message(msg, true);
-    })
-})
+});
+
+socket.on("message response", function (msg) {
+    add_message(msg, true);
+});
+
 
 
 
