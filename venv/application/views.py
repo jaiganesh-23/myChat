@@ -4,6 +4,7 @@ from .user_database import user_Db
 from .message_database import message_Db
 from werkzeug.utils import secure_filename
 import os
+import bcrypt
 view = Blueprint("views", __name__)
 
 # GLOBAL CONSTANTS
@@ -21,6 +22,9 @@ def home(logged_user=None):
         name = request.form["fullName"]
         username = request.form["userName"]
         password = request.form["password"]
+        password = password.encode('utf-8')
+        salt = bcrypt.gensalt()
+        password = bcrypt.hashpw(password, salt)
         email = request.form["email"]
         gender = request.form["gender"]
         age = request.form["age"]
@@ -42,12 +46,14 @@ def login():
     if request.method == "POST":
         username = request.form["userName"]
         password = request.form["password"]
+        password = password.encode('utf-8')
 
         user_db = user_Db()
         found_user = user_db.check_user(username)
         if found_user:
             user = user_db.get_user(username)
-            if user["password"] == password:
+            user_password = user["password"]
+            if bcrypt.checkpw(password, user_password):
                 session[USER_NAME] = username
                 flash(f"Username {username} Authenticated, login successful")
                 return redirect(url_for("views.user"))
@@ -202,7 +208,7 @@ def get_profile_img(user_name):
 @view.route("/user/chat-file-upload", methods=['POST'])
 def chat_file_upload():
     username = session[USER_NAME]
-
+    messages = []
 
     if 'files[]' not in request.files:
         resp = jsonify({'message' : 'No file part in the request'})
@@ -218,18 +224,20 @@ def chat_file_upload():
         filename = secure_filename(file.filename)
         file_path = os.path.join(UPLOAD_FOLDER2, filename)
         file.save(file_path)
+        messages.append(file_path)
         success = True
 
     if success and errors:
-        errors['message'] = 'File(s) successfully uploaded'
+        errors['message'] = messages
         resp = jsonify(errors)
         resp.status_code = 206
         return resp
     if success:
-        resp = jsonify({'message' : 'Files successfully uploaded'})
+        resp = jsonify({'message' : messages})
         resp.status_code = 201
         return resp
     else:
+        errors['message'] = messages
         resp = jsonify(errors)
         resp.status_code = 400
         return resp

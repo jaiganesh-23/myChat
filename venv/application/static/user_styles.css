@@ -272,6 +272,10 @@ body{
     margin: 10px 10px;
 }
 
+.msg-img{
+    width: 100px;
+}
+
 @media  screen and (max-width: 1700px){
     .chat-room i{
         font-size: 60px;

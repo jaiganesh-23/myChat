@@ -1,6 +1,8 @@
 
 async function add_message(msg, scroll) {
     var message = msg["content"];
+    var file_dirs = msg["file_dirs"];
+    file_dirs = file_dirs.split(",");
     var chat_room = msg["chat_room"];
     var usr_name = msg["sender"];
     let datetime = msg["datetime"];
@@ -27,6 +29,16 @@ async function add_message(msg, scroll) {
                         <img src=${profile_img_path} class="profile-icon">    
                         <span class="usr-name">${usr_name}</span>: ${message}
     `;
+
+    let base_dir = "../static/chat-files";
+    for(let i=0;i<file_dirs.length;i++){
+        if(file_dirs[i] != ""){
+            let c_dir = base_dir + '/' + file_dirs[i];
+            m_p.innerHTML += `
+                                <img src=${c_dir} class="msg-img">
+            `; 
+        }
+    }
 
     let d_p = document.createElement("p");
     d_p.classList.add("date-time");
@@ -84,7 +96,6 @@ async function add_message(msg, scroll) {
         scrolltobottom("messages");
     }
 }
-
 
 function scrolltobottom(id) {
     var div = document.getElementById(id);
@@ -157,8 +168,8 @@ async function add_chat_rooms() {
 
         room_div.classList.add("chat-room")
         room_div_image.setAttribute("src", profile_img_path);
-        room_div_image.classList.add("profile-icon")
-        room_div_h4.textContent = room_name
+        room_div_image.classList.add("profile-icon");
+        room_div_h4.textContent = room_name;
 
         room_div.appendChild(room_div_image);
         room_div.appendChild(room_div_h4);
@@ -184,7 +195,8 @@ async function load_chat(chat_room, room_name) {
         if (i == messages.length - 1) {
             scroll = true;
         }
-        add_message(msg, scroll);
+        if(msg['msg_type'] == 'text/img')
+            add_message(msg, scroll);
     }
 }
 
@@ -218,6 +230,7 @@ chat_file_upload.addEventListener("change", function(e) {
 
 var socket = io.connect('/', { transports: ['websocket'] });
 socket.on("connect", async function () {
+    setTimeout({},5000);
     var usr_name = await load_name();
     var room_name = document.getElementById("chat-room-header").textContent;
     var datetime = new Date();
@@ -227,12 +240,16 @@ socket.on("connect", async function () {
             chat_room: room_name,
             sender: usr_name,
             connect: true,
+            msg_type: 'text/img',
+            file_dirs: '',
         });
         socket.emit("receive_message", {
             content: "<----- Welcome to the server " + usr_name + " ----->",
             chat_room: room_name,
             sender: usr_name,
             connect: true,
+            msg_type: 'text/img',
+            file_dirs: '',
         });
     }
     var send_message = $("button#send").on("click", async function (e) {
@@ -244,47 +261,56 @@ socket.on("connect", async function () {
         let user_name = await load_name();
         let room_name = document.getElementById("chat-room-header").textContent;
 
-        msg_input.value = "";
-
-        user_input_list = user_input.split(" ");
-
-        if (user_input_list[0] == "/bot") {
-            socket.emit("receive_message", {
-                content: user_input,
-                chat_room: room_name,
-                sender: user_name,
-                bot: true,
-            });
-        }
-        else {
-            socket.emit("receive_message", {
-                content: user_input,
-                chat_room: room_name,
-                sender: user_name,
-            });
-        }
-
         let form_data = new FormData();
         let ins = document.getElementById('chat-file').files.length;
-
+        let file_names = "";
         for(let x=0;x<ins;x++){
             form_data.append("files[]", document.getElementById('chat-file').files[x]);
+            file_names += document.getElementById('chat-file').files[x].name + ',';
         }
         $.ajax({
-            url: "http://" + document.domain + ":" + location.port + "/user/chat-file-upload", // point to server-side URL
-            dataType: 'json', // what to expect back from server
+            url: "https://" + document.domain + ":" + location.port + "/user/chat-file-upload", 
+            dataType: 'json', 
             cache: false,
             contentType: false,
             processData: false,
             data: form_data,
             type: 'post',
             success: function (response) { 
-
+                console.log(response.message);
             },
             error: function (response) {
 
             }
         });
+
+        msg_input.value = "";
+
+        user_input_list = user_input.split(" ");
+
+        if(user_input != ""){
+            if (user_input_list[0] == "/bot") {
+                socket.emit("receive_message", {
+                    content: user_input,
+                    chat_room: room_name,
+                    sender: user_name,
+                    bot: true,
+                    msg_type: 'text/img',
+                    file_dirs: file_names,
+                });
+            }
+            else {
+                socket.emit("receive_message", {
+                    content: user_input,
+                    chat_room: room_name,
+                    sender: user_name,
+                    msg_type: 'text/img',
+                    file_dirs: file_names,
+                });
+            }
+        }
+
+        
 
         let selected_files = document.querySelector(".selected-files");
         selected_files.remove();
@@ -298,11 +324,14 @@ socket.on("disconnect", async function () {
         content: user_name + " just left the server...",
         chat_room: room_name,
         sender: user_name,
+        msg_type: 'text/img',
+        file_dirs: '',
     });
 });
 
 socket.on("message response", function (msg) {
-    add_message(msg, true);
+    if(msg['msg_type'] == 'text/img')
+        add_message(msg, true);
 });
 
 

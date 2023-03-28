@@ -32,7 +32,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     if "bot" in data:
         message_database = message_Db()
         c_message = data["content"][5:]
-        message_database.save_message(data["sender"], data["content"], data["chat_room"])
+        message_database.save_message(data["sender"], data["content"], data["chat_room"], data['msg_type'], data['file_dirs'])
         c_message_dict = {"role": "user", "content": c_message}
         messages.append(c_message_dict)
         completion = openai.ChatCompletion.create(
@@ -41,7 +41,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
         )
 
         c_reply = completion.choices[0].message["content"]
-        message_database.save_message("openai_bot", c_reply, data["chat_room"])
+        message_database.save_message("openai_bot", c_reply, data["chat_room"], 'text/img', '')
         c_reply_dict = {"role": "assistant", "content": c_reply}
         messages.append(c_reply_dict)
         
@@ -53,7 +53,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
 
     else:
         message_database = message_Db()
-        message_database.save_message(data["sender"], data["content"], data["chat_room"])
+        message_database.save_message(data["sender"], data["content"], data["chat_room"], data['msg_type'], data['file_dirs'])
         print(json)
         socketio.emit('message response', json)
 

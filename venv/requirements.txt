@@ -27,3 +27,4 @@ Waitress
 Openai
 gevent
 gevent-websocket
+bcrypt

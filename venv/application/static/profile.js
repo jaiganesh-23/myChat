@@ -75,7 +75,7 @@ async function load_user_details(){
         
         
         $.ajax({
-            url: "http://" + document.domain + ":" + location.port + "/profile/profile-img-upload", // point to server-side URL
+            url: "https://" + document.domain + ":" + location.port + "/profile/profile-img-upload", // point to server-side URL
             dataType: 'json', // what to expect back from server
             cache: false,
             contentType: false,
