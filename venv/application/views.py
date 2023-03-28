@@ -137,6 +137,7 @@ def get_user_details(user_name):
     found_user = user_db.check_user(user_name)
     if found_user:
         user = user_db.get_user(user_name)
+        user['password'] = ''
         return jsonify(user)
     else:
         return None
