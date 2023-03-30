@@ -51,6 +51,7 @@ a:hover{
     list-style: none;
     justify-content: space-around;
     width: 100%;
+    font-size: 20px;
 }
 
 .icon{
@@ -116,6 +117,7 @@ a:hover{
 @media  screen and (max-width: 1700px){
     .navbar-nav{
         width: 100%;
+        font-size: 20px;
     }
     .login-link{
         width: 200px;
@@ -129,6 +131,7 @@ a:hover{
 @media  screen and (max-width: 1350px){
     .navbar-nav{
         width: 100%;
+        font-size: 20px;
     }
     .login-link{
         width: 200px;
@@ -142,7 +145,7 @@ a:hover{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 16px;
+        font-size: 18px;
     }
     .login-link{
         width: 180px;
@@ -162,7 +165,7 @@ a:hover{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 14px;
+        font-size: 18px;
     }
     .login-link{
         width: 160px;
@@ -176,7 +179,7 @@ a:hover{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 14px;
+        font-size: 16px;
     }
     .login-link{
         width: 140px;
@@ -219,7 +222,6 @@ a:hover{
     .navbar-nav{
         width: 80%;
         margin-left: 20%;
-        font-size: 14px;
     }
     .login-link{
         width: 100px;

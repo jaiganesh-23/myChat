@@ -65,10 +65,10 @@ def login():
 @view.route("/user")
 def user():
     if USER_NAME in session:
-        return render_template("user.html", session=session)
+        return render_template("user.html", **{"session":session})
     else:
         flash("Login First to start chatting")
-        return render_template("home.html")
+        return render_template("home.html", **{"session":session})
 
 
 @view.route("/get_name")
@@ -149,7 +149,7 @@ def get_profile(user_name = None):
         user_db = user_Db()
         found_user = user_db.check_user(user_name)
         if(found_user):
-            return render_template("profile.html", **{"user": user_name})
+            return render_template("profile.html", **{"user": user_name, "session":session})
         else:
             flash("Profile for requested user does not exist.")
             return redirect(url_for("views.home"))

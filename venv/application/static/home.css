@@ -44,6 +44,7 @@ body{
     margin-bottom: 0;
     list-style: none;
     justify-content: space-around;
+    font-size: 20px;
     width: 100%;
 }
 
@@ -223,6 +224,7 @@ body{
     }
     .navbar-nav{
         width: 100%;
+        font-size: 20px;
     }
     .login-link{
         width: 200px;
@@ -266,6 +268,7 @@ body{
     }
     .navbar-nav{
         width: 100%;
+        font-size: 18px;
     }
     .login-link{
         width: 200px;
@@ -309,7 +312,7 @@ body{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 16px;
+        font-size: 18px;
     }
     .login-link{
         width: 180px;
@@ -353,7 +356,7 @@ body{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 14px;
+        font-size: 16px;
     }
     .login-link{
         width: 160px;
@@ -397,7 +400,7 @@ body{
     .navbar-nav{
         width: 80%;
         left: 10%;
-        font-size: 14px;
+        font-size: 16px;
     }
     .login-link{
         width: 140px;
@@ -470,7 +473,6 @@ body{
     .navbar-nav{
         width: 80%;
         margin-left: 20%;
-        font-size: 14px;
     }
     .login-link{
         width: 100px;
