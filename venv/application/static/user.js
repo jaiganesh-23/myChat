@@ -230,7 +230,7 @@ chat_file_upload.addEventListener("change", function(e) {
 
 var socket = io.connect('/', { transports: ['websocket'] });
 socket.on("connect", async function () {
-    setTimeout({},5000);
+    setTimeout(function (){},5000);
     var usr_name = await load_name();
     var room_name = document.getElementById("chat-room-header").textContent;
     var datetime = new Date();
