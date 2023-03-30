@@ -4,12 +4,14 @@ from .user_database import user_Db
 from .message_database import message_Db
 from werkzeug.utils import secure_filename
 import os
+import bcrypt
 view = Blueprint("views", __name__)
 
 # GLOBAL CONSTANTS
 USER_NAME = 'name'
 MSG_LIMIT = 30
 UPLOAD_FOLDER = "./application/static/profile-images/"
+UPLOAD_FOLDER2 = './application/static/chat-files/'
 # VIEWS
 
 @view.route("/", methods=["GET", "POST"])
@@ -20,6 +22,9 @@ def home(logged_user=None):
         name = request.form["fullName"]
         username = request.form["userName"]
         password = request.form["password"]
+        password = password.encode('utf-8')
+        salt = bcrypt.gensalt()
+        password = bcrypt.hashpw(password, salt)
         email = request.form["email"]
         gender = request.form["gender"]
         age = request.form["age"]
@@ -41,12 +46,14 @@ def login():
     if request.method == "POST":
         username = request.form["userName"]
         password = request.form["password"]
+        password = password.encode('utf-8')
 
         user_db = user_Db()
         found_user = user_db.check_user(username)
         if found_user:
             user = user_db.get_user(username)
-            if user["password"] == password:
+            user_password = user["password"]
+            if bcrypt.checkpw(password, user_password):
                 session[USER_NAME] = username
                 flash(f"Username {username} Authenticated, login successful")
                 return redirect(url_for("views.user"))
@@ -130,6 +137,7 @@ def get_user_details(user_name):
     found_user = user_db.check_user(user_name)
     if found_user:
         user = user_db.get_user(user_name)
+        user['password'] = ''
         return jsonify(user)
     else:
         return None
@@ -198,7 +206,42 @@ def get_profile_img(user_name):
     img_path = user_db.get_img_path(user_name)
     return jsonify(img_path)
 
+@view.route("/user/chat-file-upload", methods=['POST'])
+def chat_file_upload():
+    username = session[USER_NAME]
+    messages = []
 
+    if 'files[]' not in request.files:
+        resp = jsonify({'message' : 'No file part in the request'})
+        resp.status_code = 400 
+        return resp
+    
+    files = request.files.getlist('files[]')
+
+    errors = {}
+    success = False
+
+    for file in files:
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(UPLOAD_FOLDER2, filename)
+        file.save(file_path)
+        messages.append(file_path)
+        success = True
+
+    if success and errors:
+        errors['message'] = messages
+        resp = jsonify(errors)
+        resp.status_code = 206
+        return resp
+    if success:
+        resp = jsonify({'message' : messages})
+        resp.status_code = 201
+        return resp
+    else:
+        errors['message'] = messages
+        resp = jsonify(errors)
+        resp.status_code = 400
+        return resp
 
     
 

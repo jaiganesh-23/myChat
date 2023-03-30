@@ -23,19 +23,19 @@ class message_Db:
     def _create_table(self):
         query = f"""CREATE TABLE IF NOT EXISTS {MESSAGE_TABLE}
                     (id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, 
-                    content TEXT, chat_room TEXT , datetime TEXT)"""
+                    content TEXT, chat_room TEXT , datetime TEXT, msg_type TEXT, file_dirs TEXT)"""
         d_query = f"""DROP TABLE IF EXISTS {MESSAGE_TABLE}"""
 
         #self.conn.execute(d_query)
         self.conn.execute(query)
         self.conn.commit()
 
-    def save_message(self, username, message, chatroom):
-        print(username, message, chatroom)
-        query = f"""INSERT INTO {MESSAGE_TABLE} VALUES (?, ?, ?, ?, ?)"""
+    def save_message(self, username, message, chatroom, msg_type, file_dirs):
+        print(username, message, chatroom, msg_type)
+        query = f"""INSERT INTO {MESSAGE_TABLE} VALUES (?, ?, ?, ?, ?, ?, ?)"""
         connection = sqlite3.connect(FILE)
         cursor = connection.cursor()
-        cursor.execute(query, (None, username, message, chatroom, datetime.now()))
+        cursor.execute(query, (None, username, message, chatroom, datetime.now(), msg_type, file_dirs))
         connection.commit()
 
     def get_messages(self, chatroom, limit=30):
@@ -46,7 +46,7 @@ class message_Db:
         messages = cursor.fetchall()
         messages_list = []
         for msg in messages:
-            msg_dict = {"id":msg[0], "sender": msg[1], "content": msg[2], "chat_room": msg[3], "datetime": msg[4]}
+            msg_dict = {"id":msg[0], "sender": msg[1], "content": msg[2], "chat_room": msg[3], "datetime": msg[4], 'msg_type':msg[5], 'file_dirs':msg[6]}
             messages_list.append(msg_dict)
 
         messages_list = messages_list[len(messages_list)-limit:]
