@@ -3,4 +3,4 @@ A chat application built with html, css, javascript and backend server in Flask 
 Website is hosted with gunicorn. Site can be accessed with fast live messages.
 Website: https://mychat-gumf.onrender.com
 Working on designs and more features
-
+Working on modifying db structure for friends
