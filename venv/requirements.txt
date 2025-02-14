@@ -28,3 +28,4 @@ Openai
 gevent
 gevent-websocket
 bcrypt
+numpy
