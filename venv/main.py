@@ -17,7 +17,7 @@ from datetime import datetime
 # SETUP
 app = create_app()
 socketio = SocketIO(app, logger=True, engineio_logger=True, async_mode='eventlet')
-# openai.api_key = ""
+openai.api_key = ""
 
 # Communication Functions
 
