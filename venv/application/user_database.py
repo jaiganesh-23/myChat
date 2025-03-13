@@ -58,9 +58,9 @@ class user_Db:
             query4 = f"""INSERT INTO {IMAGES_TABLE} VALUES(?, ?, ?, ?)"""
             self.cursor.execute(query4, (None, "default_friend", "default_friend", "./application/static/profile-images/male-icon.jpg"))
 
-        query = f"Delete from {IMAGES_TABLE} where username = ?"
-        self.cursor.execute(query, ("openai_bot",))
-        self.conn.commit()
+        # query = f"Delete from {IMAGES_TABLE} where username = ?"
+        # self.cursor.execute(query, ("openai_bot",))
+        # self.conn.commit()
 
         query = f"Select * from {IMAGES_TABLE} where username = ?"
         self.cursor.execute(query, ("openai_bot",))
