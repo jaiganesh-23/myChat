@@ -19,11 +19,8 @@ simple-websocket
 typing-extensions
 wheel
 wsproto
-pyOpenSSL
-eventlet
 cffi	
 gunicorn
-Waitress
 Openai
 gevent
 gevent-websocket
